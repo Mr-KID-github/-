@@ -1,0 +1,86 @@
+
+.Total_price {
+		font-style: normal;
+		font-weight: bold;
+		font-size: 50rpx;
+		line-height: 60rpx;
+	
+		color: #000000;
+}
+.Total {
+		margin-top: 40rpx;
+		display: flex;
+		flex-direction: column;
+}
+.Total_extend {
+		margin-top: 10rpx;
+		font-style: normal;
+		margin-right: 20rpx;
+		font-weight: 700;
+		font-size: 28rpx;
+		color: #000000;
+}
+.button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 40rpx;
+		margin-bottom: 50rpx;
+}
+.button image {
+		width: 330rpx;
+		height: 100rpx;
+		margin-right: 10rpx;
+}
+page{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.order_people{
+	display: flex;
+	margin-top: 30rpx;
+	position: relative;
+	right: 100rpx;
+}
+.order_people text{
+	font-style: normal;
+	font-weight: 600;
+	font-size: 30rpx;
+	line-height: 76rpx;
+
+	color: #0A0909;
+}
+.inputbcg{
+	display: flex;
+	justify-content: space-around;
+	width: 200rpx;
+	height: 80rpx;
+	background-color: white;
+	border-radius: 20rpx;
+	align-items: center;
+}
+.inputbcg image{
+	width: 40rpx;
+	height: 40rpx;
+}
+.inputbcg view{
+font-style: normal;
+font-weight: 700;
+font-size: 15px;
+line-height: 38px;
+/* identical to box height, or 253% */
+
+display: flex;
+align-items: center;
+
+color: #0A0909;
+}
+.inputbcg input{
+	max-width: 35rpx;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 30rpx;
+	color: #0A0909;
+}
+

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "apartment_item": "/components/apartment_item/apartment_item"
+  },
+  "component": true
+}

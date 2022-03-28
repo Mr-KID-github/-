@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "plan_select": "/components/plan_select/plan_select",
+    "select_position": "/components/select_position/select_position",
+    "apartment_choice": "/components/Apartment_choice/Apartment_choice"
+  }
+}
