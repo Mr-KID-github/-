@@ -1,6 +1,16 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+		    "path" : "pages/check_bill/check_bill",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "订单 - 查收",
+				"navigationBarBackgroundColor":"#FFFFFF",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+		{
 		    "path" : "pages/order/order",
 		    "style" :                                                                                    
 		    {

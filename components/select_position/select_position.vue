@@ -42,12 +42,15 @@
 				// console.log('接受是否展示' + show)
 				this.show_select = show
 			})
+			// 接受custom_value
 			uni.$on('custom_value', (value) => {
 				// console.log('接受是否展示' + value)
 				// 将自定义方案的设置更新到本地
-				this.custom_settings.settings_school = value[1]
-				this.custom_settings.settings_class = value[0]
-				console.log(this.custom_settings)
+				this.custom_settings.settings_school = value[0]
+				this.custom_settings.settings_class = value[1]
+				// console.log(this.custom_settings)
+				// 发送school和class
+				uni.$emit("send_schollandclass",this.custom_settings)
 			})
 		},
 		methods:{

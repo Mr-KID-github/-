@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "select_schoolandapartment": "/components/select_schoolandapartment/select_schoolandapartment"
+  },
+  "component": true
+}

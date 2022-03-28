@@ -27,7 +27,7 @@
 				<text>订餐人数：</text>
 				<view class="inputbcg">
 					<image src="/static/images/people.svg"></image>
-					<input />
+					<input @input="input_event" :value="num" v-model="num"/>
 					<view>人</view>
 				</view>
 			</view>
@@ -39,15 +39,42 @@
 	export default {
 		data() {
 			return {
-				plan_name: '早餐'
+				plan_name: '早餐',
+				num: 0,
+				breakfast_num: 0,
+				lunch_num: 0,
+				dinner_num: 0,
 			}
 		},
 		methods: {
 			select_plan(e){
 				// console.log(e.currentTarget.id)
 				this.plan_name = e.currentTarget.id
+				if (this.plan_name == '早餐'){
+					this.num = this.breakfast_num
+				}
+				if (this.plan_name == '中餐'){
+					this.num = this.lunch_num
+				}
+				if (this.plan_name == '晚餐'){
+					this.num = this.dinner_num
+				}
 				// 发送选择的方案给父组件
 				this.$emit('send_plan',this.plan_name)
+			},
+			input_event(e){
+				// console.log(e)
+				var num = e.detail.value
+				if (this.plan_name == '早餐'){
+					this.breakfast_num = num
+				}
+				if (this.plan_name == '中餐'){
+					this.lunch_num = num
+				}
+				if (this.plan_name == '晚餐'){
+					this.dinner_num = num
+				}
+				uni.$emit("send_dinner",[this.breakfast_num,this.lunch_num,this.dinner_num])
 			}
 		}
 	}

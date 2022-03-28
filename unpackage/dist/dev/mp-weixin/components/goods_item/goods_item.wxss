@@ -1,0 +1,41 @@
+
+.Notification_img {
+		width: 96rpx;
+		height: 96rpx;
+		position: absolute;
+		right: 100rpx;
+		margin-top: 148rpx;
+}
+.detail{
+		display: flex; 
+		width: 300rpx;
+		justify-content: space-between;
+}
+.background{
+	background-color: white;
+	border-radius: 20rpx;
+	margin-top: 20rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 580rpx;
+	height: 110rpx;
+	padding-left: 40rpx;
+	padding-right: 40rpx;
+	padding-top: 30rpx;
+	padding-bottom: 30rpx;
+	margin-bottom: 60rpx;
+}
+.text{
+	font-style: normal;
+	font-weight: 800;
+	font-size: 32rpx;
+	
+	color: #000000;
+}
+.text2{
+font-style: normal;
+font-weight: 800;
+font-size: 28rpx;
+}
+

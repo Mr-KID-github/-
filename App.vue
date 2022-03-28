@@ -8,6 +8,9 @@
 		},
 		onHide: function() {
 			console.log('App Hide')
+		},
+		globalData: {
+			server:'https://qiubao.ltd/学长来了',
 		}
 	}
 </script>

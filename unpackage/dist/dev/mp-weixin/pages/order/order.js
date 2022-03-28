@@ -1,6 +1,17 @@
-(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/order/order"],{
-
-/***/ 12:
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/order/order"],[
+/* 0 */,
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */
 /*!********************************************************************************!*\
   !*** D:/HBuilderProjects/疫情期间校园订餐小程序/main.js?{"page":"pages%2Forder%2Forder"} ***!
   \********************************************************************************/
@@ -15,8 +26,7 @@ createPage(_order.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
-
-/***/ 13:
+/* 13 */
 /*!*************************************************************!*\
   !*** D:/HBuilderProjects/疫情期间校园订餐小程序/pages/order/order.vue ***!
   \*************************************************************/
@@ -28,7 +38,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _order_vue_vue_type_template_id_127632e4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./order.vue?vue&type=template&id=127632e4& */ 14);
 /* harmony import */ var _order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./order.vue?vue&type=script&lang=js& */ 16);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _order_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./order.vue?vue&type=style&index=0&lang=css& */ 36);
+/* harmony import */ var _order_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./order.vue?vue&type=style&index=0&lang=css& */ 18);
 /* harmony import */ var _HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../软件安装/HBuilderX.3.3.5.20211229.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js */ 11);
 
 var renderjs
@@ -56,8 +66,7 @@ component.options.__file = "pages/order/order.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
-
-/***/ 14:
+/* 14 */
 /*!********************************************************************************************!*\
   !*** D:/HBuilderProjects/疫情期间校园订餐小程序/pages/order/order.vue?vue&type=template&id=127632e4& ***!
   \********************************************************************************************/
@@ -78,8 +87,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /***/ }),
-
-/***/ 15:
+/* 15 */
 /*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/HBuilderProjects/疫情期间校园订餐小程序/pages/order/order.vue?vue&type=template&id=127632e4& ***!
   \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -96,13 +104,13 @@ var components
 try {
   components = {
     plan_select: function() {
-      return __webpack_require__.e(/*! import() | components/plan_select/plan_select */ "components/plan_select/plan_select").then(__webpack_require__.bind(null, /*! @/components/plan_select/plan_select.vue */ 26))
+      return __webpack_require__.e(/*! import() | components/plan_select/plan_select */ "components/plan_select/plan_select").then(__webpack_require__.bind(null, /*! @/components/plan_select/plan_select.vue */ 28))
     },
     select_position: function() {
-      return __webpack_require__.e(/*! import() | components/select_position/select_position */ "components/select_position/select_position").then(__webpack_require__.bind(null, /*! @/components/select_position/select_position.vue */ 39))
+      return __webpack_require__.e(/*! import() | components/select_position/select_position */ "components/select_position/select_position").then(__webpack_require__.bind(null, /*! @/components/select_position/select_position.vue */ 35))
     },
     Apartment_choice: function() {
-      return __webpack_require__.e(/*! import() | components/Apartment_choice/Apartment_choice */ "components/Apartment_choice/Apartment_choice").then(__webpack_require__.bind(null, /*! @/components/Apartment_choice/Apartment_choice.vue */ 55))
+      return __webpack_require__.e(/*! import() | components/Apartment_choice/Apartment_choice */ "components/Apartment_choice/Apartment_choice").then(__webpack_require__.bind(null, /*! @/components/Apartment_choice/Apartment_choice.vue */ 42))
     }
   }
 } catch (e) {
@@ -134,8 +142,7 @@ render._withStripped = true
 
 
 /***/ }),
-
-/***/ 16:
+/* 16 */
 /*!**************************************************************************************!*\
   !*** D:/HBuilderProjects/疫情期间校园订餐小程序/pages/order/order.vue?vue&type=script&lang=js& ***!
   \**************************************************************************************/
@@ -150,8 +157,7 @@ __webpack_require__.r(__webpack_exports__);
  /* harmony default export */ __webpack_exports__["default"] = (_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
-
-/***/ 17:
+/* 17 */
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/HBuilderProjects/疫情期间校园订餐小程序/pages/order/order.vue?vue&type=script&lang=js& ***!
   \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -159,7 +165,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
 //
 //
 //
@@ -198,19 +204,175 @@ var _default =
 {
   data: function data() {
     return {
-      plan_name: '' };
-
+      plan_name: '', // 早餐、中餐、晚餐
+      bill: {
+        'breakfast_num': 0,
+        "lunch_num": 0,
+        "dinner_num": 0,
+        "school": "",
+        "class": "",
+        "apartment": "",
+        "room": "",
+        "price": 0 }
+      // 订单
+    };
+  },
+  onLoad: function onLoad() {var _this = this;
+    // 接受早中晚订餐人数
+    uni.$on('send_dinner', function (value) {
+      // console.log('接受早中晚订餐人数' + value)
+      // 将自定义方案的设置更新到本地
+      _this.bill.breakfast_num = value[0];
+      _this.bill.lunch_num = value[1];
+      _this.bill.dinner_num = value[2];
+      // 计算价格
+      _this.bill.price = 4 * _this.bill.breakfast_num + 7 * _this.bill.lunch_num + 7 * _this.bill.dinner_num;
+      console.log(_this.bill);
+    });
+    // 接受学院班级
+    uni.$on('send_schollandclass', function (value) {
+      console.log('接受学院班级' + value);
+      _this.bill.school = value.settings_school;
+      _this.bill.class = value.settings_class;
+      console.log(_this.bill);
+    });
+    // 接受公寓
+    uni.$on("send_apartment", function (value) {
+      console.log('接受公寓' + value);
+      _this.bill.apartment = value;
+      console.log(_this.bill);
+    });
+    // 接受寝室号
+    uni.$on("send_room", function (value) {
+      console.log('接受寝室号' + value);
+      _this.bill.room = value;
+      console.log(_this.bill);
+    });
   },
   methods: {
     // 接受从子组件方案选择器里传入的方案
     get_plan: function get_plan(plan_name) {
       console.log(plan_name);
       this.plan_name = plan_name;
+    },
+    //获取时间函数
+    getTime: function getTime() {
+      var date = new Date(),
+      year = date.getFullYear(),
+      month = date.getMonth() + 1,
+      day = date.getDate(),
+      hour = date.getHours() < 10 ? "0" + date.getHours() : date.getHours(),
+      minute = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes(),
+      second = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
+      month >= 1 && month <= 9 ? month = "0" + month : "";
+      day >= 0 && day <= 9 ? day = "0" + day : "";
+      var timer = year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
+      return timer;
+    },
+    // 确认方案
+    check_out: function check_out() {
+      // 检验有没有填好信息
+      if (this.bill.breakfast_num == 0 && this.bill.lunch_num == 0 && this.bill.dinner_num == 0) {
+        uni.showModal({
+          title: "友情提示",
+          showCancel: false,
+          content: "哥们，你们也没有订餐呀？" });
+
+      } else {
+        if (this.bill.school != '' && this.bill.apartment != '' && this.bill.room != '') {
+          if (this.bill.breakfast_num != 0 && this.bill.lunch_num != 0 && this.bill.dinner_num != 0) {
+            console.log("全部订餐啦！");
+            console.log(this.bill);
+            // 调用方案接口
+            uni.request({
+              url: getApp().globalData.server + '/index.php/Home/Index/send_bill',
+              data: {
+                school: this.bill.school,
+                apartment: this.bill.apartment,
+                class: this.bill.class,
+                room: this.bill.room,
+                breakfast_num: this.bill.breakfast_num,
+                lunch_num: this.bill.lunch_num,
+                dinner_num: this.bill.dinner_num,
+                price: this.bill.price,
+                time: this.getTime() //获得当前时间
+              },
+              method: "POST",
+              dataType: 'json',
+              header: {
+                'content-type': 'application/x-www-form-urlencoded' // 默认值
+              },
+              success: function success(res) {//后端返回的数据
+                console.log(res);
+              },
+              fail: function fail(res) {
+
+              } });
+
+          } else {
+            if (this.bill.breakfast_num == 0) {
+              uni.showModal({
+                title: "友情提示",
+                content: "你们寝室确定不吃早饭吗？",
+                success: function success(res) {
+                  if (res.confirm) {
+                    console.log('用户点击确定');
+                    console.log(this.bill);
+                  }
+                } });
+
+            }
+            if (this.bill.lunch_num == 0) {
+              uni.showModal({
+                title: "友情提示",
+                content: "你们寝室确定不吃中饭吗？",
+                success: function success(res) {
+                  if (res.confirm) {
+                    console.log('用户点击确定');
+                    console.log(this.bill);
+                  }
+                } });
+
+            }
+            if (this.bill.dinner_num == 0) {
+              uni.showModal({
+                title: "友情提示",
+                content: "你们寝室确定不吃晚饭吗？",
+                success: function success(res) {
+                  if (res.confirm) {
+                    console.log('用户点击确定');
+                    console.log(this.bill);
+                  }
+                } });
+
+            }
+          }
+        } else {
+          if (this.bill.school == '') {
+            uni.showModal({
+              showCancel: false,
+              content: "请选择学院班级" });
+
+          } else if (this.bill.apartment == '') {
+            uni.showModal({
+              showCancel: false,
+              content: "请选择公寓" });
+
+          } else if (this.bill.room == '') {
+            uni.showModal({
+              showCancel: false,
+              content: "请填写寝室号" });
+
+          }
+        }
+
+      }
+
     } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-
-/***/ 36:
+/* 18 */
 /*!**********************************************************************************************!*\
   !*** D:/HBuilderProjects/疫情期间校园订餐小程序/pages/order/order.vue?vue&type=style&index=0&lang=css& ***!
   \**********************************************************************************************/
@@ -219,14 +381,13 @@ var _default =
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_2_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../软件安装/HBuilderX.3.3.5.20211229.full/HBuilderX/plugins/uniapp-cli/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!../../../../软件安装/HBuilderX.3.3.5.20211229.full/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!../../../../软件安装/HBuilderX.3.3.5.20211229.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!../../../../软件安装/HBuilderX.3.3.5.20211229.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!../../../../软件安装/HBuilderX.3.3.5.20211229.full/HBuilderX/plugins/uniapp-cli/node_modules/postcss-loader/src??ref--6-oneOf-1-3!../../../../软件安装/HBuilderX.3.3.5.20211229.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../软件安装/HBuilderX.3.3.5.20211229.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./order.vue?vue&type=style&index=0&lang=css& */ 37);
+/* harmony import */ var _HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_2_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../软件安装/HBuilderX.3.3.5.20211229.full/HBuilderX/plugins/uniapp-cli/node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!../../../../软件安装/HBuilderX.3.3.5.20211229.full/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!../../../../软件安装/HBuilderX.3.3.5.20211229.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!../../../../软件安装/HBuilderX.3.3.5.20211229.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!../../../../软件安装/HBuilderX.3.3.5.20211229.full/HBuilderX/plugins/uniapp-cli/node_modules/postcss-loader/src??ref--6-oneOf-1-3!../../../../软件安装/HBuilderX.3.3.5.20211229.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!../../../../软件安装/HBuilderX.3.3.5.20211229.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!./order.vue?vue&type=style&index=0&lang=css& */ 19);
 /* harmony import */ var _HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_2_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_2_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_2_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_2_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
  /* harmony default export */ __webpack_exports__["default"] = (_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_2_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_vue_loader_lib_index_js_vue_loader_options_HBuilderX_3_3_5_20211229_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_style_js_order_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
-
-/***/ 37:
+/* 19 */
 /*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/HBuilderProjects/疫情期间校园订餐小程序/pages/order/order.vue?vue&type=style&index=0&lang=css& ***!
   \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -238,6 +399,5 @@ __webpack_require__.r(__webpack_exports__);
   
 
 /***/ })
-
-},[[12,"common/runtime","common/vendor"]]]);
+],[[12,"common/runtime","common/vendor"]]]);
 //# sourceMappingURL=../../../.sourcemap/mp-weixin/pages/order/order.js.map

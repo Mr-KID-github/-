@@ -13,7 +13,7 @@
 				<view class="order_apartment">
 					<text>寝室号：</text>
 					<view class="inputbcg2">
-						<input />
+						<input @input="input_event"/>
 					</view>
 				</view>
 			</view>
@@ -46,7 +46,8 @@
 				// console.log('接受是否展示' + value)
 				// 将自定义方案的设置更新到本地
 				this.custom_settings.apartment = value[0]
-				console.log(this.custom_settings)
+				// console.log(this.custom_settings)
+				uni.$emit("send_apartment",this.custom_settings.apartment)
 			})
 		},
 		methods:{
@@ -54,6 +55,9 @@
 			show_Model() {
 				this.show_select = true
 			},
+			input_event(e){
+				uni.$emit("send_room",e.detail.value)
+			}
 		}
 	}
 </script>

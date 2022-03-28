@@ -509,7 +509,19 @@ var render = function() {
                   _c("v-uni-image", {
                     attrs: { src: "/static/images/people.svg", _i: 16 }
                   }),
-                  _c("v-uni-input", { attrs: { _i: 17 } }),
+                  _c("v-uni-input", {
+                    attrs: { value: _vm._$g(17, "a-value"), _i: 17 },
+                    on: {
+                      input: function($event) {
+                        return _vm.$handleViewEvent($event)
+                      }
+                    },
+                    model: {
+                      value: _vm._$g(17, "v-model"),
+                      callback: function() {},
+                      expression: "num"
+                    }
+                  }),
                   _c("v-uni-view", { attrs: { _i: 18 } }, [_vm._v("人")])
                 ],
                 1
@@ -1878,7 +1890,16 @@ var render = function() {
                   _c(
                     "v-uni-view",
                     { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } },
-                    [_c("v-uni-input", { attrs: { _i: 11 } })],
+                    [
+                      _c("v-uni-input", {
+                        attrs: { _i: 11 },
+                        on: {
+                          input: function($event) {
+                            return _vm.$handleViewEvent($event)
+                          }
+                        }
+                      })
+                    ],
                     1
                   )
                 ],

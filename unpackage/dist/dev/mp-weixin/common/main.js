@@ -97,7 +97,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   },
   onHide: function onHide() {
     console.log('App Hide');
-  } };exports.default = _default;
+  },
+  globalData: {
+    server: 'https://qiubao.ltd/学长来了' } };exports.default = _default;
 
 /***/ }),
 /* 9 */

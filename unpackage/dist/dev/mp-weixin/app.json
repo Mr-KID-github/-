@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/check_bill/check_bill",
     "pages/order/order",
     "pages/index/index"
   ],
