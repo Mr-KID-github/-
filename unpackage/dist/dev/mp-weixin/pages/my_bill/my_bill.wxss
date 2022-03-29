@@ -1,0 +1,7 @@
+
+.text_item{
+	font-style: normal;
+	font-weight: 800;
+	position: relative;
+}
+

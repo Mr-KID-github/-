@@ -2,6 +2,15 @@
 .plan_time {
 		width: 670rpx;
 }
+.plan_title2{
+		margin-left: 60rpx;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 25rpx;
+		line-height: 76rpx;
+		
+		color: #0A0909;
+}
 .plan_title {
 		margin-left: 60rpx;
 		font-style: normal;

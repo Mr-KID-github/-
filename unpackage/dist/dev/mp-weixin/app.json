@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/check_bill/check_bill",
     "pages/order/order",
-    "pages/index/index"
+    "pages/my_bill/my_bill"
   ],
   "subPackages": [],
   "window": {

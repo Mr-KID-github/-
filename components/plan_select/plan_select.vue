@@ -26,8 +26,8 @@
 			<view class="order_people">
 				<text>订餐人数：</text>
 				<view class="inputbcg">
-					<image src="/static/images/people.svg"></image>
-					<input @input="input_event" :value="num" v-model="num"/>
+					<image :src="imgs.people"></image>
+					<input @input="input_event" :name="num" v-model="num"/>
 					<view>人</view>
 				</view>
 			</view>
@@ -44,6 +44,9 @@
 				breakfast_num: 0,
 				lunch_num: 0,
 				dinner_num: 0,
+				imgs:{
+					'people': getApp().globalData.server_img + '/images/people.svg'
+				}
 			}
 		},
 		methods: {

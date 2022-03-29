@@ -16,8 +16,8 @@
 		<view v-for="item in bill">
 			<!-- 订单列表 -->
 			<goods_item v-if="check_time=='breakfast'" :check_time="check_time" :bill_id="item.bill_id" :bill_check.sync="item.breakfast_order" :bill_time="send_time" :bill_class="item.bill_class" :bill_price="item.bill_breakfast_num*4" :bill_num="'早饭:  '+item.bill_breakfast_num+' 份'"></goods_item>
-			<goods_item v-if="check_time=='lunch'" :check_time="check_time" :bill_id="item.bill_id" :bill_check.sync="item.dinner_order" :bill_time="send_time" :sum="lunch_sum" :bill_class="item.bill_class" :bill_price="item.bill_breakfast_num*7" :bill_num="'午饭:  '+item.bill_lunch_num+' 份'"></goods_item>
-			<goods_item v-if="check_time=='dinner'" :check_time="check_time" :bill_id="item.bill_id" :bill_check.sync="item.lunch_order" :bill_time="send_time" :sum="dinner_sum" :bill_class="item.bill_class" :bill_price="item.bill_breakfast_num*7" :bill_num="'晚饭:  '+item.bill_dinner_num+' 份'"></goods_item>
+			<goods_item v-if="check_time=='lunch'" :check_time="check_time" :bill_id="item.bill_id" :bill_check.sync="item.lunch_order" :bill_time="send_time" :sum="lunch_sum" :bill_class="item.bill_class" :bill_price="item.bill_lunch_num*7" :bill_num="'午饭:  '+item.bill_lunch_num+' 份'"></goods_item>
+			<goods_item v-if="check_time=='dinner'" :check_time="check_time" :bill_id="item.bill_id" :bill_check.sync="item.dinner_order" :bill_time="send_time" :sum="dinner_sum" :bill_class="item.bill_class" :bill_price="item.bill_dinner_num*7" :bill_num="'晚饭:  '+item.bill_dinner_num+' 份'"></goods_item>
 		</view>
 	</view>
 </template>
@@ -38,20 +38,36 @@
 		},
 		onLoad() {
 			// this.send_time = this.sendTime()
-			console.log(this.send_time)
 			uni.$on('select_bar',(check_time) => {
 				this.check_time = check_time
 				console.log(this.check_time)
 			})
 			uni.$on('send_schollandapartment', (value) => {
 				console.log(value)
+				// 看是统计今日订餐还是查收昨日订单
+				if (value[1]){
+					// 查收昨日订单
+					var time = this.getTime()
+					this.send_time = time
+				} else {
+					// 统计今日订餐信息
+					var time = this.sendTime()
+					this.send_time = time
+				}
+				this.getbill(time,value[0])
+			})
+			
+		},
+		methods: {
+			// 调用接口获取订单信息
+			getbill:function(date,value){
 				var that = this
 				// 选择好条件后进行后台查询获取订单信息
 				uni.request({
 					url: getApp().globalData.server + '/index.php/Home/Index/find_bill',
 					data: {
 						// 查询条件（不直接查询所有，而是输入条件在数据库中查询，因为数据量一大用数据库的搜索算法更快，不然还得自己写算法）
-						time: that.getTime(),
+						time: date,
 						school: value.settings_school,
 						apartment: value.apartment
 					},
@@ -65,8 +81,13 @@
 						// 查询成功
 						if (res.data.error_code == 0){
 							that.bill = res.data.data
+							// 初始化数量
+							that.breakfast_sum = 0
+							that.lunch_sum = 0
+							that.dinner_sum = 0
 							for (let i=0; i < that.bill.length; i++){
 								var item = that.bill[i]
+								// console.log(parseInt(item.bill_breakfast_num))
 								that.breakfast_sum += parseInt(item.bill_breakfast_num)
 								that.lunch_sum += parseInt(item.bill_lunch_num)
 								that.dinner_sum += parseInt(item.bill_dinner_num)
@@ -82,10 +103,9 @@
 						console.log(that.bill)
 					}
 				})
-			})
-		},
-		methods: {
-			//获取时间函数
+							
+			},
+			//昨日订单查收
 			getTime: function() {
 				var date = new Date(),
 					year = date.getFullYear(),
@@ -99,6 +119,7 @@
 				var timer = year + '-' + month + '-' + (day-1);
 				return timer;
 			},
+			//今日订单统计
 			sendTime: function() {
 				var date = new Date(),
 					year = date.getFullYear(),

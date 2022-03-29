@@ -99,7 +99,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     console.log('App Hide');
   },
   globalData: {
-    server: 'https://qiubao.ltd/学长来了' } };exports.default = _default;
+    server: 'https://qiubao.ltd/学长来了',
+    server_img: 'https://qiubao.ltd/学长来了/Public/' } };exports.default = _default;
 
 /***/ }),
 /* 9 */

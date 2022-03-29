@@ -11,6 +11,7 @@
 		},
 		globalData: {
 			server:'https://qiubao.ltd/学长来了',
+			server_img:'https://qiubao.ltd/学长来了/Public/'
 		}
 	}
 </script>

@@ -5,12 +5,12 @@
 				<text :class="select=='breakfast'?'select_item':'unselect_item'">早餐-查收</text>
 				<view class="select_background" v-if="select=='breakfast'"></view>
 			</view>
-			<image class="divider" src="/static/images/divider.svg"></image>
+			<image class="divider" :src="imgs.divider"></image>
 			<view class="item_bar" @click="to_lunch">
 				<text :class="select=='lunch'?'select_item':'unselect_item'">中餐-查收</text>
 				<view class="select_background" v-if="select=='lunch'"></view>
 			</view>
-			<image class="divider" src="/static/images/divider.svg"></image>
+			<image class="divider" :src="imgs.divider"></image>
 			<view class="item_bar" @click="to_dinner">
 				<text :class="select=='dinner'?'select_item':'unselect_item'">晚餐-查收</text>
 				<view class="select_background" v-if="select=='dinner'"></view>
@@ -25,6 +25,9 @@
 		data() {
 			return {
 				select: 'breakfast',
+				imgs:{
+					'divider': getApp().globalData.server_img + '/images/divider.svg',
+				}
 			};
 		},
 		// props:['func'],

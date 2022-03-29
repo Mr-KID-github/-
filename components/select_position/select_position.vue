@@ -6,15 +6,15 @@
 				<!-- 点击展示自定义弹窗 -->
 				<view class="time_item" @click="show_Model">
 					<text v-if="!custom_settings.settings_school">请选择学院</text>
-					<text v-if="custom_settings.settings_school">{{custom_settings.settings_class}}</text>
-					<image src="/static/images/arrow.svg" style="width: 25rpx; height: 25rpx;"></image>
+					<text v-if="custom_settings.settings_school">{{custom_settings.settings_school}}</text>
+					<image :src="imgs.arrow" style="width: 25rpx; height: 25rpx;"></image>
 				</view>
 		
 				<!-- 点击展示自定义弹窗 -->
 				<view class="time_item" @click="show_Model">
 					<text v-if="!custom_settings.settings_class">请选择班级</text>
-					<text v-if="custom_settings.settings_class">{{custom_settings.settings_school}}</text>
-					<image src="/static/images/arrow.svg" style="width: 25rpx; height: 25rpx;"></image>
+					<text v-if="custom_settings.settings_class">{{custom_settings.settings_class}}</text>
+					<image :src="imgs.arrow" style="width: 25rpx; height: 25rpx;"></image>
 				</view>
 			</view>
 		</view>
@@ -35,6 +35,9 @@
 				custom_settings: {
 					
 				},
+				imgs:{
+					'arrow': getApp().globalData.server_img + '/images/arrow.svg',
+				}
 			};
 		},
 		created() {

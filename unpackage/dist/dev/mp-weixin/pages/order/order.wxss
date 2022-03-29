@@ -1,4 +1,13 @@
 
+.real_text{
+		margin-top: 40rpx;
+		margin-bottom: 40rpx;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 30rpx;
+		
+		color: red;
+}
 .Total_price {
 		font-style: normal;
 		font-weight: bold;

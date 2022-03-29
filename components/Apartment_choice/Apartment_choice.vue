@@ -7,7 +7,7 @@
 				<view class="time_item" @click="show_Model">
 					<text v-if="!custom_settings.apartment">请选择公寓</text>
 					<text v-if="custom_settings.apartment">{{custom_settings.apartment}}</text>
-					<image src="/static/images/arrow.svg" style="width: 25rpx; height: 25rpx;"></image>
+					<image :src="imgs.arrow" style="width: 25rpx; height: 25rpx;"></image>
 				</view>
 		
 				<view class="order_apartment">
@@ -35,6 +35,9 @@
 				custom_settings: {
 					
 				},
+				imgs:{
+					'arrow': getApp().globalData.server_img + '/images/arrow.svg'
+				}
 			};
 		},
 		created() {
