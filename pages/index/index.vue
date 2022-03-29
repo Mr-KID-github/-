@@ -33,11 +33,30 @@
 					'gradient': getApp().globalData.server_img + '/images/gradient.png',
 					'img': getApp().globalData.server_img + '/images/img.png'
 					
-				}
+				},
+				password: [
+					
+				]
 			}
 		},
 		onLoad() {
+			// 从数据库中获取密钥
+			var that = this
+			uni.request({
+				url: getApp().globalData.server + '/index.php/Home/Index/find_pw',
+				data: {
 
+				},
+				method: "POST",
+				dataType: 'json',
+				header: {
+					'content-type': 'application/x-www-form-urlencoded' // 默认值
+				},
+				success(res) {
+					console.log(res)
+					that.password = res.data.password
+				}
+			})
 		},
 		methods: {
 			//获取时间函数
@@ -67,12 +86,17 @@
 				})
 			},
 			to_check(e){
-				// console.log(e.detail.value)
-				if (e.detail.value == '123456'){
-					uni.reLaunch({
-						url:'/pages/check_bill/check_bill'
-					})
+				console.log(e.detail.value)
+				for (let i = 0; i < this.password.length; i++){
+					var item = parseInt(this.password[i].password)
+					console.log(item)
+					if (e.detail.value == item){
+						uni.reLaunch({
+							url:'/pages/check_bill/check_bill'
+						})
+					}
 				}
+				
 			},
 			to_order(){
 				var hour = this.getTime()
