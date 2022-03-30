@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view style="background-color: white; height: 220rpx;">
 		<view class="plan_time">
 			<text class="plan_title">选择公寓 & 输入寝室号</text>
 			<view class="time_content">
@@ -13,7 +13,7 @@
 				<view class="order_apartment">
 					<text>寝室号：</text>
 					<view class="inputbcg2">
-						<input @input="input_event" v-model="room"  type="number" maxlength="3"/>
+						<input @input="input_event" v-model="room" type="number" maxlength="3"/>
 					</view>
 				</view>
 			</view>
@@ -41,6 +41,8 @@
 			};
 		},
 		created() {
+			this.custom_settings.apartment = getApp().globalData.apartment
+			this.$nextTick(function () {this.room  = getApp().globalData.room})
 			uni.$on('unshow', (show) => {
 				// console.log('接受是否展示' + show)
 				this.show_select = show
@@ -51,7 +53,9 @@
 				this.custom_settings.apartment = value[0]
 				// console.log(this.custom_settings)
 				uni.$emit("send_apartment",this.custom_settings.apartment)
+				
 			})
+			
 		},
 		methods:{
 			//展示自定义弹窗
@@ -104,7 +108,6 @@
 	color: #0A0909;
 }
 .plan_time {
-	margin-top: 20rpx;
 		width: 670rpx;
 	}
 

@@ -212,9 +212,12 @@ var _default =
       return timer;
     },
     to_bill: function to_bill() {
-      uni.showModal({
-        content: "将于近期开通",
-        showCancel: false });
+      // uni.showModal({
+      // 	content: "将于近期开通",
+      // 	showCancel:false
+      // })
+      uni.reLaunch({
+        url: '/pages/my_bill/my_bill' });
 
     },
     to_manager: function to_manager() {
@@ -238,7 +241,7 @@ var _default =
     },
     to_order: function to_order() {
       var hour = this.getTime();
-      if (hour < 9) {
+      if (hour < 8) {
         uni.showModal({
           showCancel: false,
           content: "订餐时间未开始" });

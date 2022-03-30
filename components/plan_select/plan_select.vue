@@ -24,11 +24,19 @@
 			</view>
 			
 			<view class="order_people">
-				<text>订餐人数：</text>
+				<text>总订餐人数：</text>
 				<view class="inputbcg">
 					<image :src="imgs.people"></image>
-					<input @input="input_event" :name="num" v-model="num" type="number" maxlength="2"/>
+					<input @input="input_event" placeholder="0" :name="num" v-model="num" type="number" maxlength="2"/>
 					<view>人</view>
+				</view>
+			</view>
+			<view class="order_people">
+				<text style="color: #007AFF;">其中清真：</text>
+				<view class="inputbcg">
+					<image :src="imgs.people"></image>
+					<input @input="input_event2" placeholder="0" v-model="special_num" type="number" maxlength="2"/>
+					<view style="color: #007AFF;">人</view>
 				</view>
 			</view>
 		</view>
@@ -44,6 +52,10 @@
 				breakfast_num: 0,
 				lunch_num: 0,
 				dinner_num: 0,
+				special_num: 0,
+				breakfast_special: 0,
+				lunch_special: 0,
+				dinner_special: 0,
 				imgs:{
 					'people': getApp().globalData.server_img + '/images/people.svg'
 				}
@@ -55,13 +67,17 @@
 				this.plan_name = e.currentTarget.id
 				if (this.plan_name == '早餐'){
 					this.num = this.breakfast_num
+					this.special_num = this.breakfast_special
 				}
 				if (this.plan_name == '中餐'){
 					this.num = this.lunch_num
+					this.special_num = this.lunch_special
 				}
 				if (this.plan_name == '晚餐'){
 					this.num = this.dinner_num
+					this.special_num = this.dinner_special
 				}
+				
 				// 发送选择的方案给父组件
 				this.$emit('send_plan',this.plan_name)
 			},
@@ -78,6 +94,20 @@
 					this.dinner_num = num
 				}
 				uni.$emit("send_dinner",[this.breakfast_num,this.lunch_num,this.dinner_num])
+			},
+			input_event2(e){
+				// console.log(e)
+				var num = e.detail.value
+				if (this.plan_name == '早餐'){
+					this.breakfast_special = num
+				}
+				if (this.plan_name == '中餐'){
+					this.lunch_special = num
+				}
+				if (this.plan_name == '晚餐'){
+					this.dinner_special = num
+				}
+				uni.$emit("send_special",[this.breakfast_special,this.lunch_special,this.dinner_special])
 			}
 		}
 	}
@@ -152,7 +182,7 @@
 	align-items: center;
 	background-color: #F1F4F7;
 	width: 670rpx;
-	height: 360rpx;
+	height: 480rpx;
 	border-radius: 20rpx;
 	margin-top: 20rpx;
 	padding-top: 24rpx;

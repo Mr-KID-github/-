@@ -1,7 +1,9 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "查看订单",
+  "navigationBarBackgroundColor": "#FFFFFF",
   "enablePullDownRefresh": false,
   "usingComponents": {
-    "goods_item": "/components/goods_item/goods_item"
+    "apartment_choice": "/components/Apartment_choice/Apartment_choice",
+    "food_item": "/components/food_item/food_item"
   }
 }

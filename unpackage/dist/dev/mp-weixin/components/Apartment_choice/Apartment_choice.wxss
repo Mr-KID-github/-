@@ -28,7 +28,6 @@
 	color: #0A0909;
 }
 .plan_time {
-	margin-top: 20rpx;
 		width: 670rpx;
 }
 .plan_title {

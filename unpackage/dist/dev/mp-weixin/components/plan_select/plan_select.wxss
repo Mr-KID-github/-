@@ -67,7 +67,7 @@
 	align-items: center;
 	background-color: #F1F4F7;
 	width: 670rpx;
-	height: 360rpx;
+	height: 480rpx;
 	border-radius: 20rpx;
 	margin-top: 20rpx;
 	padding-top: 24rpx;

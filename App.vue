@@ -11,7 +11,11 @@
 		},
 		globalData: {
 			server:'https://qiubao.ltd/学长来了',
-			server_img:'https://qiubao.ltd/学长来了/Public/'
+			server_img:'https://qiubao.ltd/学长来了/Public/',
+			apartment: '',
+			room: '',
+			school: '',
+			class: ''
 		}
 	}
 </script>

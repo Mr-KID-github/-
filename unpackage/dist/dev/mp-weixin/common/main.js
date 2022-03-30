@@ -100,7 +100,11 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   },
   globalData: {
     server: 'https://qiubao.ltd/学长来了',
-    server_img: 'https://qiubao.ltd/学长来了/Public/' } };exports.default = _default;
+    server_img: 'https://qiubao.ltd/学长来了/Public/',
+    apartment: '',
+    room: '',
+    school: '',
+    class: '' } };exports.default = _default;
 
 /***/ }),
 /* 9 */

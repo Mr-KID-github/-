@@ -55,7 +55,21 @@
 			}
 		},
 		onLoad() {
+			// 初始化全局参数
+			this.bill.apartment = getApp().globalData.apartment
+			this.bill.room = getApp().globalData.room
+			this.bill.class = getApp().globalData.class
+			this.bill.school = getApp().globalData.school
 			// console.log(this.imgs.REVIEW_MENU)
+			// 接受清真餐人数
+			uni.$on('send_special', (value) => {
+				// console.log('接受早中晚订餐人数' + value)
+				// 将自定义方案的设置更新到本地
+				this.bill.breakfast_special = value[0]
+				this.bill.lunch_special = value[1]
+				this.bill.dinner_special = value[2]
+				// console.log(this.bill)
+			})
 			// 接受早中晚订餐人数
 			uni.$on('send_dinner', (value) => {
 				// console.log('接受早中晚订餐人数' + value)
@@ -65,26 +79,28 @@
 				this.bill.dinner_num = value[2]
 				// 计算价格
 				this.bill.price = 4*this.bill.breakfast_num + 7 * this.bill.lunch_num + 7 * this.bill.dinner_num
-				console.log(this.bill)
+				// console.log(this.bill)
 			})
 			// 接受学院班级
 			uni.$on('send_schollandclass',(value) => {
-				console.log('接受学院班级' + value)
+				// console.log('接受学院班级' + value)
 				this.bill.school = value.settings_school
 				this.bill.class = value.settings_class
-				console.log(this.bill)
+				// console.log(this.bill)
 			})
 			// 接受公寓
 			uni.$on("send_apartment",(value) => {
-				console.log('接受公寓' + value)
+				// console.log('接受公寓' + value)
 				this.bill.apartment = value
-				console.log(this.bill)
+				getApp().globalData.apartment = value
+				// console.log(this.bill)
 			})
 			// 接受寝室号
 			uni.$on("send_room",(value) => {
-				console.log('接受寝室号' + value)
+				// console.log('接受寝室号' + value)
 				this.bill.room = value
-				console.log(this.bill)
+				// console.log(this.bill)
+				getApp().globalData.room = value
 			})
 		},
 		methods: {
@@ -149,7 +165,8 @@
 							// 数据库中存在此寝室订单
 							if (res.data.error_code==0){
 								uni.showModal({
-									content: "您的订单已经提交过啦，如需修改请联系管理员",
+									title:'您的订单已经提交过啦',
+									content: "如需修改请在规定时间内前往订单界面修改",
 									showCancel: false
 								})
 							} else {
@@ -162,8 +179,8 @@
 									})
 								} else {
 									if (that.bill.school!='' && that.bill.apartment!='' && that.bill.room!=''){
-										if (that.bill.breakfast_num != 0 && that.bill.lunch_num != 0 && that.bill.dinner_num != 0){
-											console.log("全部订餐啦！")
+										
+											console.log("生成订单！")
 											console.log(that.bill)
 											// 调用方案接口
 											uni.request({
@@ -176,6 +193,11 @@
 													breakfast_num: that.bill.breakfast_num,
 													lunch_num: that.bill.lunch_num,
 													dinner_num:that.bill.dinner_num,
+													
+													breakfast_special: that.bill.breakfast_special,
+													lunch_special: that.bill.lunch_special,
+													dinner_special:that.bill.dinner_special,
+													
 													price: that.bill.price,
 													time: that.getTime()	//获得当前时间
 												},
@@ -189,125 +211,23 @@
 													// 暂时先直接弹窗
 													uni.showModal({
 														showCancel: false,
-														content:"恭喜！您的订餐信息已记录，如需修改请联系管理员！"
+														content:"恭喜！您的订餐信息已记录，请在公众号缴费",
+														success(res) {
+															if (res.confirm){
+																uni.reLaunch({
+																	url:'/pages/my_bill/my_bill'
+																})
+															}
+														}
 													})
-													// uni.reLaunch({
-													// 	url:'/pages/my_bill/my_bill'
-													// })
+													
 												},
 												fail(res) {
 													
 												}
 											})
 										
-										} else{
-											if (that.bill.breakfast_num == 0){
-												uni.showModal({
-													title: "友情提示",
-													content:"你们寝室确定不吃早饭吗？",
-													success (res) {
-														if (res.confirm) {
-														  console.log('用户点击确定')
-														  console.log(that.bill)
-														  // 调用方案接口
-														  uni.request({
-														  	url: getApp().globalData.server + '/index.php/Home/Index/send_bill',
-														  	data: {
-														  		school: that.bill.school,
-														  		apartment: that.bill.apartment,
-														  		class: that.bill.class,
-														  		room: that.bill.room,
-														  		breakfast_num: that.bill.breakfast_num,
-														  		lunch_num: that.bill.lunch_num,
-														  		dinner_num:that.bill.dinner_num,
-														  		price: that.bill.price,
-														  		time: that.getTime()	//获得当前时间
-														  	},
-														  	method: "POST",
-														  	dataType: 'json',
-														  	header: {
-														  		'content-type': 'application/x-www-form-urlencoded' // 默认值
-														  	},
-														  	success: function (res) {  //后端返回的数据
-														  		console.log(res)
-														  		// 暂时先直接弹窗
-														  		uni.showModal({
-														  			showCancel: false,
-														  			content:"恭喜！您的订餐信息已记录，如需修改请联系管理员！"
-														  		})
-														  		// uni.reLaunch({
-														  		// 	url:'/pages/my_bill/my_bill'
-														  		// })
-														  	},
-														  	fail(res) {
-														  		
-														  	}
-														  })
-														  
-														}
-													}
-												})
-											}
-											if (that.bill.lunch_num == 0){
-												uni.showModal({
-													title: "友情提示",
-													content:"你们寝室确定不吃中饭吗？",
-													success (res) {
-														if (res.confirm) {
-														  console.log('用户点击确定')
-														  console.log(that.bill)
-														  // 调用方案接口
-														  uni.request({
-														  	url: getApp().globalData.server + '/index.php/Home/Index/send_bill',
-														  	data: {
-														  		school: that.bill.school,
-														  		apartment: that.bill.apartment,
-														  		class: that.bill.class,
-														  		room: that.bill.room,
-														  		breakfast_num: that.bill.breakfast_num,
-														  		lunch_num: that.bill.lunch_num,
-														  		dinner_num:that.bill.dinner_num,
-														  		price: that.bill.price,
-														  		time: that.getTime()	//获得当前时间
-														  	},
-														  	method: "POST",
-														  	dataType: 'json',
-														  	header: {
-														  		'content-type': 'application/x-www-form-urlencoded' // 默认值
-														  	},
-														  	success: function (res) {  //后端返回的数据
-														  		console.log(res)
-														  		// 暂时先直接弹窗
-														  		uni.showModal({
-														  			showCancel: false,
-														  			content:"恭喜！您的订餐信息已记录，如需修改请联系管理员！"
-														  		})
-														  		// uni.reLaunch({
-														  		// 	url:'/pages/my_bill/my_bill'
-														  		// })
-														  	},
-														  	fail(res) {
-														  		
-														  	}
-														  })
-														  
-														}
-													}
-												})
-											}
-											if (that.bill.dinner_num == 0){
-												uni.showModal({
-													title: "友情提示",
-													content:"你们寝室确定不吃晚饭吗？",
-													success (res) {
-														if (res.confirm) {
-														  console.log('用户点击确定')
-														  console.log(that.bill)
-														}
-													}
-												})
-											}
-										}
+										
 									}
 									
 								}

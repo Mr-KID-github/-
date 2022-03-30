@@ -7,6 +7,26 @@
 			}
 		},
 		{
+		    "path" : "pages/my_bill/my_bill",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "查看订单",
+				"navigationBarBackgroundColor":"#FFFFFF",
+		        "enablePullDownRefresh": false
+		    }
+		},
+
+
+		{
+		    "path" : "pages/order/order",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "订餐",
+		        "enablePullDownRefresh": false
+		    }
+		},
+
+		{
 		    "path" : "pages/check_bill/check_bill",
 		    "style" :                                                                                    
 		    {
@@ -15,24 +35,6 @@
 		        "enablePullDownRefresh": false
 		    }
 		    
-		},
-		{
-		    "path" : "pages/order/order",
-		    "style" :                                                                                    
-		    {
-		        "navigationBarTitleText": "",
-		        "enablePullDownRefresh": false
-		    }
-		},
-
-
-		{
-		    "path" : "pages/my_bill/my_bill",
-		    "style" :                                                                                    
-		    {
-		        "navigationBarTitleText": "",
-		        "enablePullDownRefresh": false
-		    }
 		}
 
 

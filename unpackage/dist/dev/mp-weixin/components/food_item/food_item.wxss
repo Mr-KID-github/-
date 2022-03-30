@@ -1,0 +1,101 @@
+
+.note_title{
+		font-style: normal;
+		font-weight: 700;
+		font-size: 28rpx;
+		color: #000000;
+}
+.note_content{
+		font-style: normal;
+		font-weight: 500;
+		font-size: 25rpx;
+		
+		color: #000000;
+}
+.note2{
+		display: flex;
+		align-items: center;
+		position: relative;
+		bottom: 40rpx;
+		margin-left: 60rpx;
+		padding-left: 20rpx;
+		padding-right: 20rpx;
+		width: 600rpx;
+		min-height: 80rpx;
+		background-color: white;
+		border-radius: 20rpx;
+}
+.note1{
+		font-style: normal;
+		font-weight: 700;
+		font-size: 28rpx;
+		color: #000000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	bottom: 40rpx;
+	margin-left: 60rpx;
+	padding-left: 20rpx;
+	padding-right: 20rpx;
+	width: 600rpx;
+	min-height: 80rpx;
+		background-color: #00BCD4;
+		border-radius: 20rpx;
+}
+.arrow_up{
+		width: 45rpx;
+		height: 45rpx;
+}
+.room_detail{
+		width: 300rpx;
+		background-color: white;
+		background-color: white;
+		position: relative;
+		bottom: 40rpx;
+		border-radius: 20rpx;
+		margin-left: 60rpx;
+		padding-left: 50rpx;
+		padding-right: 50rpx;
+		padding-top: 25rpx;
+		padding-bottom: 25rpx;
+}
+.Notification_img {
+		width: 96rpx;
+		height: 96rpx;
+		position: absolute;
+		margin-top: 95rpx;
+		-webkit-transform: rotate(10deg);
+		        transform: rotate(10deg)
+}
+.detail{
+		display: flex;
+}
+.background{
+	background-color: white;
+	border-radius: 20rpx;
+	margin-top: 20rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 580rpx;
+	height: 110rpx;
+	padding-left: 40rpx;
+	padding-right: 40rpx;
+	padding-top: 30rpx;
+	padding-bottom: 30rpx;
+	margin-bottom: 60rpx;
+}
+.text{
+	font-style: normal;
+	font-weight: 800;
+	font-size: 32rpx;
+	
+	color: #000000;
+}
+.text2{
+font-style: normal;
+font-weight: 800;
+font-size: 28rpx;
+}
+
