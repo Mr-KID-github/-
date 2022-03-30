@@ -149,32 +149,18 @@ var _default =
       '物联1941',
       '物联2041',
       '物联2141',
+      '软件1942',
+      '软件2021',
+      '软件2122',
+      '软件2123',
+      '数据2141',
+      '计算1941',
+      '计算2041',
+      '计算2042',
       '软件2041',
-      '软件2141'] },
-
-
-    {
-      "name": "土木",
-      "data": [
-      '建筑1941',
-      '建筑2041',
-      '建筑2141'] },
-
-
-    {
-      "name": "机电",
-      "data": [
-      '制造1941',
-      '制造2041',
-      '制造2141'] },
-
-
-    {
-      "name": "水利",
-      "data": [
-      '环境1941',
-      '环境2041',
-      '环境2141'] }];
+      '软件2042',
+      '软件2121',
+      '软件2141'] }];
 
 
 
@@ -187,7 +173,18 @@ var _default =
   },
   props: ['show'],
   created: function created() {
+    // // 从数据库中获取学院班级信息
+    // uni.request({
+    // 	url: getApp().globalData.server + '/index.php/Home/Index/find_class',
+    // 	data: {
 
+    // 	},
+    // 	method: "POST",
+    // 	dataType: 'json',
+    // 	header: {
+    // 		'content-type': 'application/x-www-form-urlencoded' // 默认值
+    // 	},
+    // })
   },
   methods: {
     bindchange: function bindchange(e) {
@@ -203,16 +200,16 @@ var _default =
       uni.$emit('unshow', this.showmask);
       uni.$emit('custom_value', ['请选择学院', '请选择班级']);
     },
-    confirm: function confirm() {
-      // setTimeout( () => {
-      //     // 这里添加您的逻辑
-
-      // }, 200)
+    confirm: function confirm() {var _this = this;
+      setTimeout(function () {
+        // 这里添加您的逻辑
+        _this.showmask = false;
+        uni.$emit('unshow', _this.showmask);
+        uni.$emit('custom_value', [_this.schools[_this.school].name, _this.schools[_this.school].data[_this.class]]);
+      }, 550);
       // console.log(this.schools[this.school].name)
       // console.log(this.schools[this.school].data[this.class])
-      this.showmask = false;
-      uni.$emit('unshow', this.showmask);
-      uni.$emit('custom_value', [this.schools[this.school].name, this.schools[this.school].data[this.class]]);
+
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

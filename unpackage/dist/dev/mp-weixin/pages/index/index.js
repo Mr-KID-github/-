@@ -253,6 +253,9 @@ var _default =
           url: "/pages/order/order" });
 
       }
+      // uni.redirectTo({
+      // 		url:"/pages/order/order"
+      // })
     },
     to_goods: function to_goods() {
       uni.redirectTo({

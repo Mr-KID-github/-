@@ -115,6 +115,9 @@
 						url:"/pages/order/order"
 					})
 				}
+				// uni.redirectTo({
+				// 		url:"/pages/order/order"
+				// })
 			},
 			to_goods(){
 				uni.redirectTo({

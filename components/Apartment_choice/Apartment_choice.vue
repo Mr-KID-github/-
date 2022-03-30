@@ -13,7 +13,7 @@
 				<view class="order_apartment">
 					<text>寝室号：</text>
 					<view class="inputbcg2">
-						<input @input="input_event"/>
+						<input @input="input_event" v-model="room"  type="number" maxlength="3"/>
 					</view>
 				</view>
 			</view>
@@ -31,7 +31,7 @@
 		data() {
 			return {
 				show_select: false,
-				
+				room: '',
 				custom_settings: {
 					
 				},
@@ -58,8 +58,16 @@
 			show_Model() {
 				this.show_select = true
 			},
+			
+			filter(val) { //过滤input密码类型只输入数字
+				return val.replace(/\D/g, '')
+			},
+
 			input_event(e){
-				uni.$emit("send_room",e.detail.value)
+				let value = this.filter(e.target.value)
+				console.log(value)
+				this.$nextTick(function () {this.room  = value})
+				uni.$emit("send_room",this.room)
 			}
 		}
 	}

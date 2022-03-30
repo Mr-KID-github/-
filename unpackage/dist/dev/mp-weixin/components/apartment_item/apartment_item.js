@@ -140,7 +140,7 @@ var _default =
   name: "apartment_item",
   data: function data() {
     var apartments = [
-    '六公寓', '七公寓', '二公寓'];
+    '六公寓'];
 
     return {
       apartments: apartments,

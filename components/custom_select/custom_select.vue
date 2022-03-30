@@ -33,32 +33,18 @@
 						'物联1941',
 						'物联2041',
 						'物联2141',
+						'软件1942',
+						'软件2021',
+						'软件2122',
+						'软件2123',
+						'数据2141',
+						'计算1941',
+						'计算2041',
+						'计算2042',
 						'软件2041',
+						'软件2042',
+						'软件2121',
 						'软件2141'
-					]
-				},
-				{
-					"name":"土木",
-					"data":[
-						'建筑1941',
-						'建筑2041',
-						'建筑2141',
-					]
-				},
-				{
-					"name":"机电",
-					"data":[
-						'制造1941',
-						'制造2041',
-						'制造2141',
-					]
-				},
-				{
-					"name":"水利",
-					"data":[
-						'环境1941',
-						'环境2041',
-						'环境2141',
 					]
 				}
 			]
@@ -71,7 +57,18 @@
 		},
 		props:['show'],
 		created() {
-			
+			// // 从数据库中获取学院班级信息
+			// uni.request({
+			// 	url: getApp().globalData.server + '/index.php/Home/Index/find_class',
+			// 	data: {
+
+			// 	},
+			// 	method: "POST",
+			// 	dataType: 'json',
+			// 	header: {
+			// 		'content-type': 'application/x-www-form-urlencoded' // 默认值
+			// 	},
+			// })
 		},
 		methods:{
 			bindchange(e){
@@ -88,15 +85,15 @@
 				uni.$emit('custom_value',['请选择学院','请选择班级'])
 			},
 			confirm(){
-				// setTimeout( () => {
-				//     // 这里添加您的逻辑
-					
-				// }, 200)
+				setTimeout( () => {
+				    // 这里添加您的逻辑
+					this.showmask = false
+					uni.$emit('unshow',this.showmask)
+					uni.$emit('custom_value',[this.schools[this.school].name,this.schools[this.school].data[this.class]])
+				}, 550)
 				// console.log(this.schools[this.school].name)
 				// console.log(this.schools[this.school].data[this.class])
-				this.showmask = false
-				uni.$emit('unshow',this.showmask)
-				uni.$emit('custom_value',[this.schools[this.school].name,this.schools[this.school].data[this.class]])
+				
 			}
 		}
 	}

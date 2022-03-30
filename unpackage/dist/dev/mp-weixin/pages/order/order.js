@@ -275,7 +275,7 @@ var _default =
     },
     // 确认方案
     check_out: function check_out() {
-      if (this.bill.school == '') {
+      if (this.bill.school == '' || this.bill.school == '请选择学院') {
         uni.showModal({
           showCancel: false,
           content: "请选择学院班级" });

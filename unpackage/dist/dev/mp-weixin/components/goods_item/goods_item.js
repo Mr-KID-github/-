@@ -138,30 +138,117 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   name: "goods_item",
   data: function data() {
     return {
+      room_detail: [],
+      note_detail: '', // 备注信息
+      show_room: false,
       imgs: {
         'divider': getApp().globalData.server_img + '/images/divider.svg',
         'arrow': getApp().globalData.server_img + '/images/arrow.svg',
         'Notification_Check': getApp().globalData.server_img + '/images/Notification_Check.svg',
-        'Notification_UnCheck': getApp().globalData.server_img + '/images/Notification_UnCheck.svg' } };
+        'Notification_UnCheck': getApp().globalData.server_img + '/images/Notification_UnCheck.svg',
+        'arrow_up': getApp().globalData.server_img + '/images/arrow_up.svg' } };
 
 
   },
   created: function created() {
-    console.log(this.bill_class);
-    console.log(this.bill_price);
-    console.log(this.bill_num);
-    console.log(this.bill_time);
-    console.log(this.bill_check);
-    console.log(this.check_time);
+    // console.log(this.bill_class)	//订单班级
+    // console.log(this.bill_price)	//订单总价
+    // console.log(this.bill_num)		//订单总数
+    // console.log(this.bill_time)		//订单时间
+    // console.log(this.bill_check)	//是否确认
+    // console.log(this.check_time)	//查收时间（早饭or午饭or晚饭）
+    // console.log(this.special_num)	//清真餐
+    // 调用find_note接口
+    var that = this;
+    uni.request({
+      url: getApp().globalData.server + '/index.php/Home/Index/find_note',
+      data: {
+        bill_class: this.bill_class, //传入订单班级以便统一修改
+        check_time: this.check_time, //传入查收时间
+        bill_time: this.bill_time //传入订单时间
+      },
+      method: "POST",
+      dataType: 'json',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
+      success: function success(res) {
+        // console.log(res.data.note[0].note_detail)
+        if (res.data.error_code == 0) {
+          that.$nextTick(function () {that.note_detail = res.data.note[0].note_detail;});
+        }
+      } });
+
   },
   // check用于判断是否已确认，bill_id用来后续的修改订确认状态
-  props: ['bill_class', 'bill_price', 'bill_num', 'bill_time', 'bill_check', 'bill_id', 'check_time'],
+  props: ['bill_class', 'bill_price', 'bill_num', 'bill_time', 'bill_check', 'bill_id', 'check_time', 'special_num'],
   methods: {
+    // 备注信息
+    note: function note(e) {var _this = this;
+      // console.log(e)
+      this.note_detail = e.detail.value;
+      // 调用修改备注接口
+      setTimeout(function () {
+        _this.modify_node();
+      }, 2000); // 延时调用接口，等待用户输入
+
+    },
+    // 点击展示详情信息
+    show_detail: function show_detail(e) {
+      this.show_room = !this.show_room;
+      // 查询该班级当天所有订单信息
+      var that = this;
+      uni.request({
+        url: getApp().globalData.server + '/index.php/Home/Index/find_classbill',
+        data: {
+          // 查询条件（不直接查询所有，而是输入条件在数据库中查询，因为数据量一大用数据库的搜索算法更快，不然还得自己写算法）
+          time: this.bill_time,
+          class: this.bill_class },
+
+        method: "POST",
+        dataType: 'json',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded' // 默认值
+        },
+        success: function success(res) {
+          console.log(res);
+          that.room_detail = res.data.data;
+        } });
+
+    },
     //获取今天日期
     getTime: function getTime() {
       var date = new Date(),
@@ -176,6 +263,32 @@ var _default =
       var timer = year + '-' + month + '-' + day;
       return timer;
     },
+    // 修改订餐备注
+    modify_node: function modify_node() {
+      var that = this;
+      console.log("开始修改订餐备注");
+      // console.log(this.note_detail)
+      if (!this.note_detail) {
+        this.note_detail = '无';
+      }
+      uni.request({
+        url: getApp().globalData.server + '/index.php/Home/Index/modify_note',
+        data: {
+          bill_class: this.bill_class, //传入订单班级以便统一修改
+          check_time: this.check_time, //传入查收时间
+          bill_time: this.bill_time, //传入订单时间
+          note_detail: this.note_detail //备注内容
+        },
+        method: "POST",
+        dataType: 'json',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded' // 默认值
+        },
+        success: function success(res) {
+          console.log(res);
+        } });
+
+    },
     change_Check: function change_Check() {
       // 不可修改今天订餐状态
       if (this.bill_time == this.getTime()) {
@@ -185,10 +298,13 @@ var _default =
 
       } else {
         var that = this;
+
+        // 1、将订单表中该订单此时间段状态修改；
         uni.showModal({
-          content: "确认修改订单此时状态？",
+          content: "确认修改订单状态？",
           success: function success(res) {
             if (res.confirm) {
+
               console.log('调用修改订单接口');
               var there = that;
               // 根据当前状态选择调用的修改订单接口类型
@@ -197,7 +313,8 @@ var _default =
                   url: getApp().globalData.server + '/index.php/Home/Index/modify_bill2true',
                   data: {
                     bill_class: that.bill_class, //传入订单班级以便统一修改
-                    check_time: that.check_time //传入查收时间
+                    check_time: that.check_time, //传入查收时间段
+                    bill_time: that.bill_time //传入订单时间
                   },
                   method: "POST",
                   dataType: 'json',
@@ -220,7 +337,8 @@ var _default =
                   url: getApp().globalData.server + '/index.php/Home/Index/modify_bill2false',
                   data: {
                     bill_class: that.bill_class, //传入订单班级以便统一修改
-                    check_time: that.check_time //传入查收时间
+                    check_time: that.check_time, //传入查收时间段
+                    bill_time: that.bill_time //传入订单时间
                   },
                   method: "POST",
                   dataType: 'json',
@@ -243,6 +361,7 @@ var _default =
 
             }
           } });
+
 
       }
     } } };exports.default = _default;

@@ -170,7 +170,7 @@ var _default =
   data: function data() {
     return {
       show_select: false,
-
+      room: '',
       custom_settings: {},
 
 
@@ -197,8 +197,16 @@ var _default =
     show_Model: function show_Model() {
       this.show_select = true;
     },
+
+    filter: function filter(val) {//过滤input密码类型只输入数字
+      return val.replace(/\D/g, '');
+    },
+
     input_event: function input_event(e) {
-      uni.$emit("send_room", e.detail.value);
+      var value = this.filter(e.target.value);
+      console.log(value);
+      this.$nextTick(function () {this.room = value;});
+      uni.$emit("send_room", this.room);
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

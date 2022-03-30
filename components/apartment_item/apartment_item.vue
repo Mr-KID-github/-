@@ -24,7 +24,7 @@
 		name:"apartment_item",
 		data() {
 			const apartments=[
-				'六公寓','七公寓','二公寓'
+				'六公寓'
 			]
 			return {
 				apartments,

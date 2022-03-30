@@ -27,7 +27,7 @@
 				<text>订餐人数：</text>
 				<view class="inputbcg">
 					<image :src="imgs.people"></image>
-					<input @input="input_event" :name="num" v-model="num"/>
+					<input @input="input_event" :name="num" v-model="num" type="number" maxlength="2"/>
 					<view>人</view>
 				</view>
 			</view>

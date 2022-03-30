@@ -249,6 +249,13 @@ var _default =
             for (var i = 0; i < that.bill.length; i++) {
               var item = that.bill[i];
               // console.log(parseInt(item.bill_breakfast_num))
+              var detail = {
+                class: item.bill_class,
+                room: item.bill_room,
+                breakfast_num: item.bill_breakfast_num,
+                lunch_num: item.bill_lunch_num,
+                dinner_num: item.bill_dinner_num };
+
               that.breakfast_sum += parseInt(item.bill_breakfast_num);
               that.lunch_sum += parseInt(item.bill_lunch_num);
               that.dinner_sum += parseInt(item.bill_dinner_num);
@@ -256,6 +263,10 @@ var _default =
             // console.log(that.bill)
           } else if (res.data.error_code == 2) {
             that.bill = [];
+            // 初始化数量
+            that.breakfast_sum = 0;
+            that.lunch_sum = 0;
+            that.dinner_sum = 0;
           }
         },
         fail: function fail(res) {

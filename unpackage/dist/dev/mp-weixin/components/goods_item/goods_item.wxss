@@ -1,4 +1,60 @@
 
+.note_title{
+		font-style: normal;
+		font-weight: 700;
+		font-size: 28rpx;
+		color: #000000;
+}
+.note_content{
+		font-style: normal;
+		font-weight: 500;
+		font-size: 25rpx;
+		
+		color: #000000;
+}
+.note2{
+		display: flex;
+		align-items: center;
+		position: relative;
+		bottom: 25rpx;
+		margin-left: 60rpx;
+		padding-left: 20rpx;
+		padding-right: 20rpx;
+		width: 600rpx;
+		min-height: 80rpx;
+		background-color: white;
+		border-radius: 20rpx;
+}
+.note1{
+		display: flex;
+		align-items: center;
+		position: relative;
+		bottom: 40rpx;
+		margin-left: 60rpx;
+		padding-left: 20rpx;
+		padding-right: 20rpx;
+		width: 450rpx;
+		min-height: 80rpx;
+		background-color: white;
+		border-radius: 20rpx;
+}
+.arrow_up{
+		width: 45rpx;
+		height: 45rpx;
+}
+.room_detail{
+		width: 300rpx;
+		background-color: white;
+		background-color: white;
+		position: relative;
+		bottom: 40rpx;
+		border-radius: 20rpx;
+		margin-left: 60rpx;
+		padding-left: 50rpx;
+		padding-right: 50rpx;
+		padding-top: 25rpx;
+		padding-bottom: 25rpx;
+}
 .Notification_img {
 		width: 96rpx;
 		height: 96rpx;
@@ -7,9 +63,7 @@
 		margin-top: 148rpx;
 }
 .detail{
-		display: flex; 
-		width: 300rpx;
-		justify-content: space-between;
+		display: flex;
 }
 .background{
 	background-color: white;

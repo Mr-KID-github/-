@@ -15,9 +15,9 @@
 		</view>
 		<view v-for="item in bill">
 			<!-- 订单列表 -->
-			<goods_item v-if="check_time=='breakfast'" :check_time="check_time" :bill_id="item.bill_id" :bill_check.sync="item.breakfast_order" :bill_time="send_time" :bill_class="item.bill_class" :bill_price="item.bill_breakfast_num*4" :bill_num="'早饭:  '+item.bill_breakfast_num+' 份'"></goods_item>
-			<goods_item v-if="check_time=='lunch'" :check_time="check_time" :bill_id="item.bill_id" :bill_check.sync="item.lunch_order" :bill_time="send_time" :sum="lunch_sum" :bill_class="item.bill_class" :bill_price="item.bill_lunch_num*7" :bill_num="'午饭:  '+item.bill_lunch_num+' 份'"></goods_item>
-			<goods_item v-if="check_time=='dinner'" :check_time="check_time" :bill_id="item.bill_id" :bill_check.sync="item.dinner_order" :bill_time="send_time" :sum="dinner_sum" :bill_class="item.bill_class" :bill_price="item.bill_dinner_num*7" :bill_num="'晚饭:  '+item.bill_dinner_num+' 份'"></goods_item>
+			<goods_item v-if="check_time=='breakfast'" :special_num="item.breakfast_special" :check_time="check_time" :bill_id="item.bill_id" :bill_check.sync="item.breakfast_order" :bill_time="send_time" :bill_class="item.bill_class" :bill_price="item.bill_breakfast_num*4" :bill_num="'早饭:  '+item.bill_breakfast_num+' 份'"></goods_item>
+			<goods_item v-if="check_time=='lunch'" :special_num="item.lunch_special" :check_time="check_time" :bill_id="item.bill_id" :bill_check.sync="item.lunch_order" :bill_time="send_time" :sum="lunch_sum" :bill_class="item.bill_class" :bill_price="item.bill_lunch_num*7" :bill_num="'午饭:  '+item.bill_lunch_num+' 份'"></goods_item>
+			<goods_item v-if="check_time=='dinner'" :special_num="item.dinner_special" :check_time="check_time" :bill_id="item.bill_id" :bill_check.sync="item.dinner_order" :bill_time="send_time" :sum="dinner_sum" :bill_class="item.bill_class" :bill_price="item.bill_dinner_num*7" :bill_num="'晚饭:  '+item.bill_dinner_num+' 份'"></goods_item>
 		</view>
 	</view>
 </template>
@@ -88,6 +88,13 @@
 							for (let i=0; i < that.bill.length; i++){
 								var item = that.bill[i]
 								// console.log(parseInt(item.bill_breakfast_num))
+								var detail = {
+									class: item.bill_class,
+									room: item.bill_room,
+									breakfast_num: item.bill_breakfast_num,
+									lunch_num: item.bill_lunch_num,
+									dinner_num: item.bill_dinner_num
+								}
 								that.breakfast_sum += parseInt(item.bill_breakfast_num)
 								that.lunch_sum += parseInt(item.bill_lunch_num)
 								that.dinner_sum += parseInt(item.bill_dinner_num)
@@ -95,6 +102,10 @@
 							// console.log(that.bill)
 						} else if (res.data.error_code == 2){
 							that.bill = []
+							// 初始化数量
+							that.breakfast_sum = 0
+							that.lunch_sum = 0
+							that.dinner_sum = 0
 						}
 					},
 					fail(res) {
