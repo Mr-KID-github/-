@@ -4,7 +4,7 @@
 			
 		</view> -->
 		<!-- 导入公寓选择组件 -->
-		<Apartment_choice></Apartment_choice>
+<!-- 		<Apartment_choice></Apartment_choice> -->
 		
 		<!-- 标题总计 -->
 		<view style="display: flex; justify-content: center; margin-top: 36rpx;">
@@ -38,28 +38,45 @@
 	export default {
 		data() {
 			return {
-				apartment: '',
-				room: '',
+				// apartment: '',
+				// room: '',
 				bill: [
 					
 				]
 			}
 		},
 		onLoad(){
-			this.apartment = getApp().globalData.apartment
-			this.room = getApp().globalData.room
-			this.get_roomAllbill()
-			uni.$on('send_apartment', (apartment) => {
-				// console.log('接受是否展示' + show)
-				this.apartment = apartment
-				// console.log(this.apartment)
-				this.get_roomAllbill()
-			})
-			uni.$on('send_room', (room) => {
-				// console.log('接受是否展示' + show)
-				this.room = room
-				// console.log(this.room)
-				this.get_roomAllbill()
+			// this.apartment = getApp().globalData.apartment
+			// this.room = getApp().globalData.room
+			// this.get_roomAllbill()
+			// uni.$on('send_apartment', (apartment) => {
+			// 	// console.log('接受是否展示' + show)
+			// 	this.apartment = apartment
+			// 	// console.log(this.apartment)
+			// 	this.get_roomAllbill()
+			// })
+			// uni.$on('send_room', (room) => {
+			// 	// console.log('接受是否展示' + show)
+			// 	this.room = room
+			// 	// console.log(this.room)
+			// 	this.get_roomAllbill()
+			// })
+			var that = this
+			uni.request({
+				url: getApp().globalData.server + '/index.php/Home/Index/find_mybill',
+				data: {
+					pay_user: uni.getStorageSync('openId'),
+				},
+				method: "POST",
+				dataType: 'json',
+				header: {
+					'content-type': 'application/x-www-form-urlencoded' // 默认值
+				},
+				success(res) {
+					console.log(res)
+					that.bill = res.data.data
+					console.log(that.bill)
+				}
 			})
 		},
 		methods: {

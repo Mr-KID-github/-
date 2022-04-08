@@ -3,7 +3,6 @@
   "navigationBarBackgroundColor": "#FFFFFF",
   "enablePullDownRefresh": false,
   "usingComponents": {
-    "apartment_choice": "/components/Apartment_choice/Apartment_choice",
     "food_item": "/components/food_item/food_item"
   }
 }

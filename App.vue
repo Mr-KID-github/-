@@ -12,10 +12,13 @@
 		globalData: {
 			server:'https://qiubao.ltd/学长来了',
 			server_img:'https://qiubao.ltd/学长来了/Public/',
+			user_id:'',
 			apartment: '',
 			room: '',
 			school: '',
-			class: ''
+			class: '',
+			all_class_school: {},
+			all_apartment_school: {}
 		}
 	}
 </script>

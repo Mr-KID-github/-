@@ -1,9 +1,11 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/my_bill/my_bill",
     "pages/order/order",
-    "pages/check_bill/check_bill"
+    "pages/login/login",
+    "pages/my_bill/my_bill",
+    "pages/check_bill/check_bill",
+    "pages/login2/login2"
   ],
   "subPackages": [],
   "window": {
@@ -12,6 +14,5 @@
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }

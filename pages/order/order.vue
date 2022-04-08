@@ -199,7 +199,9 @@
 													dinner_special:that.bill.dinner_special,
 													
 													price: that.bill.price,
-													time: that.getTime()	//获得当前时间
+													time: that.getTime(),	//获得当前时间
+													
+													pay_user: uni.getStorageSync('openId')
 												},
 												method: "POST",
 												dataType: 'json',

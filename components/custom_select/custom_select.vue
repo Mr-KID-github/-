@@ -12,10 +12,10 @@
 			</view>
 			<picker-view class="picker-view" @change="bindchange">
 				<picker-view-column>
-					<view class="item" v-for="(item,index) in schools" :key="index">{{item.name}} 学院</view>
+					<view class="item" v-for="(item,index) in schools" :key="index">{{index}} 学院</view>
 				</picker-view-column>
 				<picker-view-column>
-					<view class="item" v-for="(item,index) in schools[school].data" :key="index">{{item}}</view>
+					<view class="item" v-for="(item,index) in schools[schoolList[school]]" :key="index">{{item}}</view>
 				</picker-view-column>
 			</picker-view>
 		</view>
@@ -27,29 +27,11 @@
 		name:"custom_select",
 		data() {
 			const schools=[
-				{
-					"name":"计算机",
-					"data":[
-						'物联1941',
-						'物联2041',
-						'物联2141',
-						'软件1942',
-						'软件2021',
-						'软件2122',
-						'软件2123',
-						'数据2141',
-						'计算1941',
-						'计算2041',
-						'计算2042',
-						'软件2041',
-						'软件2042',
-						'软件2121',
-						'软件2141'
-					]
-				}
+				
 			]
 			return {
 				schools,
+				schoolList: [],
 				showmask: true,
 				school: 0,	// 选择学校的下标
 				class: 0,	// 选择班级的下标
@@ -57,6 +39,14 @@
 		},
 		props:['show'],
 		created() {
+			this.schools = getApp().globalData.all_class_school
+			for(let key in this.schools){
+					// console.log(key) //打印每个key
+					// console.log(this.schools[key]) // 打印每个Key对应的值
+					this.schoolList.push(key)
+			}
+			console.log(this.schoolList)
+			console.log(this.schools)
 			// // 从数据库中获取学院班级信息
 			// uni.request({
 			// 	url: getApp().globalData.server + '/index.php/Home/Index/find_class',
@@ -89,7 +79,7 @@
 				    // 这里添加您的逻辑
 					this.showmask = false
 					uni.$emit('unshow',this.showmask)
-					uni.$emit('custom_value',[this.schools[this.school].name,this.schools[this.school].data[this.class]])
+					uni.$emit('custom_value',[this.schoolList[this.school],this.schools[this.schoolList[this.school]][this.class]])
 				}, 550)
 				// console.log(this.schools[this.school].name)
 				// console.log(this.schools[this.school].data[this.class])

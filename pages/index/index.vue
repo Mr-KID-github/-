@@ -17,7 +17,7 @@
 				<image :src="imgs.robot" style="width: 50rpx; height: 40rpx;"></image>
 				<text>联系管理员</text>
 			</view>
-			<text class="gogogo">准备好干饭了吗？订餐时间：10:00 ~ 13:00</text>
+			<text class="gogogo">准备好干饭了吗？订餐时间：09:00 ~ 13:00</text>
 		</view>
 	</view>
 </template>
@@ -36,10 +36,13 @@
 				},
 				password: [
 					
-				]
+				],
+				user_id: ''
 			}
 		},
 		onLoad() {
+			// 获取用户id
+			this.user_id = uni.getStorageSync('openId')
 			// 从数据库中获取密钥
 			var that = this
 			uni.request({
@@ -55,6 +58,23 @@
 				success(res) {
 					console.log(res)
 					that.password = res.data.password
+				}
+			})
+			// 获取全部公寓学院班级信息
+			uni.request({
+				url: getApp().globalData.server + '/index.php/Home/Index/find_school_apartment_class',
+				data: {
+				
+				},
+				method: "POST",
+				dataType: 'json',
+				header: {
+					'content-type': 'application/x-www-form-urlencoded' // 默认值
+				},
+				success(res) {
+					console.log(res)
+					getApp().globalData.all_apartment_school = res.data.school_apartment
+					getApp().globalData.all_class_school = res.data.school_class
 				}
 			})
 		},
@@ -78,9 +98,24 @@
 				// 	content: "将于近期开通",
 				// 	showCancel:false
 				// })
-				uni.reLaunch({
-					url: '/pages/my_bill/my_bill'
-				})
+				if (getApp().globalData.user_id == ''){
+					uni.showModal({
+						title:'登录提醒',
+						content:"请前往登录",
+						success(res) {
+							if (res.confirm){
+								uni.reLaunch({
+									url: '/pages/login/login'
+								})
+							}
+						}
+					})
+				} else {
+					uni.reLaunch({
+						url: '/pages/my_bill/my_bill'
+					})
+				}
+				
 			},
 			to_manager(){
 				uni.showModal({
@@ -102,30 +137,73 @@
 				
 			},
 			to_order(){
-				var hour = this.getTime()
-				if (hour < 8) {
+				if (getApp().globalData.user_id == ''){
 					uni.showModal({
-						showCancel:false,
-						content: "订餐时间未开始"
+						title:'登录提醒',
+						content:"请前往登录",
+						success(res) {
+							if (res.confirm){
+								uni.reLaunch({
+									url: '/pages/login/login'
+								})
+							}
+						}
 					})
-				} else if (hour > 12) {
+				} else {
+					var that = this
+					uni.request({
+						url: getApp().globalData.server + '/index.php/Home/Index/find_open_time',
+						data: {
+						
+						},
+						method: "POST",
+						dataType: 'json',
+						header: {
+							'content-type': 'application/x-www-form-urlencoded' // 默认值
+						},
+						success(res) {
+							console.log(res.data.open_time[0].end_time)
+							var hour = that.getTime()
+							if (hour <= res.data.open_time[0].start_time - 1) {
+								uni.showModal({
+									showCancel:false,
+									content: "订餐时间未开始"
+								})
+							} else if (hour > res.data.open_time[0].end_time-1) {
+								uni.showModal({
+									showCancel:false,
+									content: "订餐时间已结束"
+								})
+							} else {
+								uni.redirectTo({
+									url:"/pages/order/order"
+								})
+							}
+							// uni.redirectTo({
+							// 	url:"/pages/order/order"
+							// })
+						}
+					})
+				}
+			},
+			to_goods(){
+				if (this.user_id == ''){
 					uni.showModal({
-						showCancel:false,
-						content: "订餐时间已结束"
+						title:'登录提醒',
+						content:"请前往登录",
+						success(res) {
+							if (res.confirm){
+								uni.reLaunch({
+									url: '/pages/login/login'
+								})
+							}
+						}
 					})
 				} else {
 					uni.redirectTo({
-						url:"/pages/order/order"
+						url:"/pages/goods/goods"
 					})
 				}
-				// uni.redirectTo({
-				// 		url:"/pages/order/order"
-				// })
-			},
-			to_goods(){
-				uni.redirectTo({
-					url:"/pages/goods/goods"
-				})
 			}
 		}
 	}

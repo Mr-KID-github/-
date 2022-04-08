@@ -7,6 +7,26 @@
 			}
 		},
 		{
+		    "path" : "pages/order/order",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "订餐",
+		        "enablePullDownRefresh": false
+		    }
+		},
+
+		
+		{
+		    "path" : "pages/login/login",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
+
+		{
 		    "path" : "pages/my_bill/my_bill",
 		    "style" :                                                                                    
 		    {
@@ -17,14 +37,7 @@
 		},
 
 
-		{
-		    "path" : "pages/order/order",
-		    "style" :                                                                                    
-		    {
-		        "navigationBarTitleText": "订餐",
-		        "enablePullDownRefresh": false
-		    }
-		},
+
 
 		{
 		    "path" : "pages/check_bill/check_bill",
@@ -40,6 +53,15 @@
 
 
 
+        ,{
+            "path" : "pages/login2/login2",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

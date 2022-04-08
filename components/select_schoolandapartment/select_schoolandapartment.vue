@@ -12,10 +12,10 @@
 			</view>
 			<picker-view class="picker-view" @change="bindchange">
 				<picker-view-column>
-					<view class="item" v-for="(item,index) in schools" :key="index">{{item.name}} 学院</view>
+					<view class="item" v-for="(item,index) in schools" :key="index">{{index}} 学院</view>
 				</picker-view-column>
 				<picker-view-column>
-					<view class="item" v-for="(item,index) in schools[school].data" :key="index">{{item}}</view>
+					<view class="item" v-for="(item,index) in schools[schoolList[school]]" :key="index">{{item}}</view>
 				</picker-view-column>
 			</picker-view>
 		</view>
@@ -27,15 +27,11 @@
 		name:"select_schoolandapartment",
 		data() {
 			const schools=[
-				{
-					"name":"计算机",
-					"data":[
-						'六公寓',
-					]
-				}
+
 			]
 			return {
 				schools,
+				schoolList: [],
 				showmask: true,
 				school: 0,	// 选择学校的下标
 				class: 0,	// 选择班级的下标
@@ -43,7 +39,14 @@
 		},
 		props:['show'],
 		created() {
-			
+			this.schools = getApp().globalData.all_apartment_school
+			for(let key in this.schools){
+					// console.log(key) //打印每个key
+					// console.log(this.schools[key]) // 打印每个Key对应的值
+					this.schoolList.push(key)
+			}
+			console.log(this.schoolList)
+			console.log(this.schools)
 		},
 		methods:{
 			bindchange(e){
@@ -67,8 +70,10 @@
 				// console.log(this.schools[this.school].name)
 				// console.log(this.schools[this.school].data[this.class])
 				this.showmask = false
+				console.log(this.schools[this.schoolList[this.school]][this.class])
+				console.log(this.schoolList[this.school])
 				uni.$emit('unshow',this.showmask)
-				uni.$emit('custom_value',[this.schools[this.school].name,this.schools[this.school].data[this.class]])
+				uni.$emit('custom_value',[this.schoolList[this.school],this.schools[this.schoolList[this.school]][this.class]])
 			}
 		}
 	}

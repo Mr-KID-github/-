@@ -1,0 +1,1 @@
+<view><view><view class="header"><image src="/static/img/logo.png"></image></view><view class="content"><view>申请获取以下权限</view><text>获得您的手机号用作保存信息的身份验证</text></view><button class="bottom" open-type="getPhoneNumber" data-event-opts="{{[['tap',[['getPhoneNumber',['$event']]]]]}}" bindtap="__e">点击手机号授权授权</button></view></view>

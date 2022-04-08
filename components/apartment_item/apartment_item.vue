@@ -12,7 +12,7 @@
 			</view>
 			<picker-view class="picker-view" @change="bindchange">
 				<picker-view-column>
-					<view class="item" v-for="(item,index) in apartments" :key="index">{{item}}</view>
+					<view class="item" v-for="(item,index) in apartmentList" :key="index">{{item}}</view>
 				</picker-view-column>
 			</picker-view>
 		</view>
@@ -23,18 +23,26 @@
 	export default {
 		name:"apartment_item",
 		data() {
-			const apartments=[
-				'六公寓'
-			]
 			return {
-				apartments,
+				apartmentList:[],
 				showmask: true,
 				apartment: 0,	// 选择公寓的下标
 			};
 		},
 		props:['show'],
 		created() {
-			
+			this.schools = getApp().globalData.all_apartment_school
+			for(let key in this.schools){
+					// console.log(key) //打印每个key
+					console.log(this.schools[key]) // 打印每个Key对应的值
+					for (let i=0; i < this.schools[key].length; i++){
+						console.log(this.schools[key][i])
+						if (this.apartmentList.indexOf(this.schools[key][i]) == -1) {
+							this.apartmentList.push(this.schools[key][i])
+						}
+					}
+			}
+			console.log(this.apartmentList)
 		},
 		methods:{
 			bindchange(e){
@@ -58,7 +66,7 @@
 				// console.log(this.schools[this.school].data[this.class])
 				this.showmask = false
 				uni.$emit('unshow',this.showmask)
-				uni.$emit('apartment_value',[this.apartments[this.apartment]])
+				uni.$emit('apartment_value',[this.apartmentList[this.apartment]])
 			}
 		}
 	}
