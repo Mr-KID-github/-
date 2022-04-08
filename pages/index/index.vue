@@ -17,7 +17,7 @@
 				<image :src="imgs.robot" style="width: 50rpx; height: 40rpx;"></image>
 				<text>联系管理员</text>
 			</view>
-			<text class="gogogo">准备好干饭了吗？订餐时间：09:00 ~ 13:00</text>
+			<text class="gogogo">准备好干饭了吗？订餐时间：{{start_time}}:00 ~ {{end_time}}:00</text>
 		</view>
 	</view>
 </template>
@@ -37,10 +37,29 @@
 				password: [
 					
 				],
-				user_id: ''
+				user_id: '',
+				end_time: '',
+				start_time: ''
 			}
 		},
 		onLoad() {
+			var that = this
+			uni.request({
+				url: getApp().globalData.server + '/index.php/Home/Index/find_open_time',
+				data: {
+				
+				},
+				method: "POST",
+				dataType: 'json',
+				header: {
+					'content-type': 'application/x-www-form-urlencoded' // 默认值
+				},
+				success(res) {
+					console.log(res.data.open_time[0])
+					that.end_time = res.data.open_time[0].end_time
+					that.start_time = res.data.open_time[0].start_time
+				}
+			})
 			// 获取用户id
 			this.user_id = uni.getStorageSync('openId')
 			// 从数据库中获取密钥
@@ -150,40 +169,25 @@
 						}
 					})
 				} else {
-					var that = this
-					uni.request({
-						url: getApp().globalData.server + '/index.php/Home/Index/find_open_time',
-						data: {
-						
-						},
-						method: "POST",
-						dataType: 'json',
-						header: {
-							'content-type': 'application/x-www-form-urlencoded' // 默认值
-						},
-						success(res) {
-							console.log(res.data.open_time[0].end_time)
-							var hour = that.getTime()
-							if (hour <= res.data.open_time[0].start_time - 1) {
-								uni.showModal({
-									showCancel:false,
-									content: "订餐时间未开始"
-								})
-							} else if (hour > res.data.open_time[0].end_time-1) {
-								uni.showModal({
-									showCancel:false,
-									content: "订餐时间已结束"
-								})
-							} else {
-								uni.redirectTo({
-									url:"/pages/order/order"
-								})
-							}
-							// uni.redirectTo({
-							// 	url:"/pages/order/order"
-							// })
-						}
-					})
+					var hour = this.getTime()
+					if (hour <= this.start_time - 1) {
+						uni.showModal({
+							showCancel:false,
+							content: "订餐时间未开始"
+						})
+					} else if (hour > this.end_time-1) {
+						uni.showModal({
+							showCancel:false,
+							content: "订餐时间已结束"
+						})
+					} else {
+						uni.redirectTo({
+							url:"/pages/order/order"
+						})
+					}
+					// uni.redirectTo({
+					// 	url:"/pages/order/order"
+					// })
 				}
 			},
 			to_goods(){

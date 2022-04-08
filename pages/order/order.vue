@@ -187,8 +187,8 @@
 												url: getApp().globalData.server + '/index.php/Home/Index/send_bill',
 												data: {
 													school: that.bill.school,
-													apartment: that.bill.apartment,
-													class: that.bill.class,
+													apartment: that.bill.class,
+													class: that.bill.apartment,
 													room: that.bill.room,
 													breakfast_num: that.bill.breakfast_num,
 													lunch_num: that.bill.lunch_num,

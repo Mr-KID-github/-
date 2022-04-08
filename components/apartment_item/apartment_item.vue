@@ -31,10 +31,10 @@
 		},
 		props:['show'],
 		created() {
-			this.schools = getApp().globalData.all_apartment_school
+			this.schools = getApp().globalData.all_class_school
 			for(let key in this.schools){
 					// console.log(key) //打印每个key
-					console.log(this.schools[key]) // 打印每个Key对应的值
+					// console.log(this.schools[key]) // 打印每个Key对应的值
 					for (let i=0; i < this.schools[key].length; i++){
 						console.log(this.schools[key][i])
 						if (this.apartmentList.indexOf(this.schools[key][i]) == -1) {

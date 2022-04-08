@@ -54,7 +54,8 @@
 			                      url: "https://qiubao.ltd/球宝/index.php/Home/QiuBao/getOpenid",
 			                      method: "post",
 			                      data: {
-			                          code: res.code,
+			                        code: res.code,
+									program: '1'
 			                      },
 			                      header: {
 			                        'content-type': "application/x-www-form-urlencoded"   //注意，这里得用这个header！！

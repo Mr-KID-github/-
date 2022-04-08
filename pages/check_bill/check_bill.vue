@@ -16,6 +16,7 @@
 		<view v-for="item in bill">
 			<!-- 订单列表 -->
 			<goods_item v-if="check_time=='breakfast'"
+			:bill_apartment="item.bill_apartment"
 			 :special_num="item.breakfast_special" 
 			 :check_time="check_time" 
 			 :bill_id="item.bill_id" 
@@ -24,8 +25,8 @@
 			  :bill_class="item.bill_class"
 			   :bill_price="item.bill_breakfast_num*4" 
 			   :bill_num="'早饭:  '+item.bill_breakfast_num+' 份'"></goods_item>
-			<goods_item v-if="check_time=='lunch'" :special_num="item.lunch_special" :check_time="check_time" :bill_id="item.bill_id" :bill_check.sync="item.lunch_order" :bill_time="send_time" :sum="lunch_sum" :bill_class="item.bill_class" :bill_price="item.bill_lunch_num*7" :bill_num="'午饭:  '+item.bill_lunch_num+' 份'"></goods_item>
-			<goods_item v-if="check_time=='dinner'" :special_num="item.dinner_special" :check_time="check_time" :bill_id="item.bill_id" :bill_check.sync="item.dinner_order" :bill_time="send_time" :sum="dinner_sum" :bill_class="item.bill_class" :bill_price="item.bill_dinner_num*7" :bill_num="'晚饭:  '+item.bill_dinner_num+' 份'"></goods_item>
+			<goods_item v-if="check_time=='lunch'" :bill_apartment="item.bill_apartment" :special_num="item.lunch_special" :check_time="check_time" :bill_id="item.bill_id" :bill_check.sync="item.lunch_order" :bill_time="send_time" :sum="lunch_sum" :bill_class="item.bill_class" :bill_price="item.bill_lunch_num*7" :bill_num="'午饭:  '+item.bill_lunch_num+' 份'"></goods_item>
+			<goods_item v-if="check_time=='dinner'" :bill_apartment="item.bill_apartment" :special_num="item.dinner_special" :check_time="check_time" :bill_id="item.bill_id" :bill_check.sync="item.dinner_order" :bill_time="send_time" :sum="dinner_sum" :bill_class="item.bill_class" :bill_price="item.bill_dinner_num*7" :bill_num="'晚饭:  '+item.bill_dinner_num+' 份'"></goods_item>
 		</view>
 	</view>
 </template>
@@ -57,10 +58,12 @@
 					// 查收昨日订单
 					var time = this.getTime()
 					this.send_time = time
+					console.log(this.send_time)
 				} else {
 					// 统计今日订餐信息
 					var time = this.sendTime()
 					this.send_time = time
+					console.log(this.send_time)
 				}
 				this.getbill(time,value[0])
 			})
@@ -95,7 +98,7 @@
 							that.dinner_sum = 0
 							for (let i=0; i < that.bill.length; i++){
 								var item = that.bill[i]
-								// console.log(parseInt(item.bill_breakfast_num))
+								console.log(parseInt(item.bill_breakfast_num))
 								var detail = {
 									class: item.bill_class,
 									room: item.bill_room,
@@ -129,13 +132,13 @@
 				var date = new Date(),
 					year = date.getFullYear(),
 					month = date.getMonth() + 1,
-					day = date.getDate(),
+					day = date.getDate() - 1,
 					hour = date.getHours() < 10 ? "0" + date.getHours() : date.getHours(),
 					minute = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes(),
 					second = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
 				month >= 1 && month <= 9 ? (month = "0" + month) : "";
 				day >= 0 && day <= 9 ? (day = "0" + day) : "";
-				var timer = year + '-' + month + '-' + (day-1);
+				var timer = year + '-' + month + '-' + (day);
 				return timer;
 			},
 			//今日订单统计

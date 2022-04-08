@@ -12,7 +12,7 @@
 			</view>
 			<picker-view class="picker-view" @change="bindchange">
 				<picker-view-column>
-					<view class="item" v-for="(item,index) in schools" :key="index">{{index}} 学院</view>
+					<view class="item" v-for="(item,index) in schools" :key="index">{{index}}</view>
 				</picker-view-column>
 				<picker-view-column>
 					<view class="item" v-for="(item,index) in schools[schoolList[school]]" :key="index">{{item}}</view>
@@ -39,7 +39,7 @@
 		},
 		props:['show'],
 		created() {
-			this.schools = getApp().globalData.all_class_school
+			this.schools = getApp().globalData.all_apartment_school
 			for(let key in this.schools){
 					// console.log(key) //打印每个key
 					// console.log(this.schools[key]) // 打印每个Key对应的值

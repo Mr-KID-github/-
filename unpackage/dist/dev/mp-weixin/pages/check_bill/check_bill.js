@@ -1,9 +1,9 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/check_bill/check_bill"],{
 
 /***/ 44:
-/*!******************************************************************************************!*\
-  !*** D:/HBuilderProjects/疫情期间校园订餐小程序/main.js?{"page":"pages%2Fcheck_bill%2Fcheck_bill"} ***!
-  \******************************************************************************************/
+/*!********************************************************************************************!*\
+  !*** D:/HBuilderProjects/Yalidas的订餐小程序/main.js?{"page":"pages%2Fcheck_bill%2Fcheck_bill"} ***!
+  \********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17,9 +17,9 @@ createPage(_check_bill.default);
 /***/ }),
 
 /***/ 45:
-/*!***********************************************************************!*\
-  !*** D:/HBuilderProjects/疫情期间校园订餐小程序/pages/check_bill/check_bill.vue ***!
-  \***********************************************************************/
+/*!*************************************************************************!*\
+  !*** D:/HBuilderProjects/Yalidas的订餐小程序/pages/check_bill/check_bill.vue ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -58,9 +58,9 @@ component.options.__file = "pages/check_bill/check_bill.vue"
 /***/ }),
 
 /***/ 46:
-/*!******************************************************************************************************!*\
-  !*** D:/HBuilderProjects/疫情期间校园订餐小程序/pages/check_bill/check_bill.vue?vue&type=template&id=80e78ef4& ***!
-  \******************************************************************************************************/
+/*!********************************************************************************************************!*\
+  !*** D:/HBuilderProjects/Yalidas的订餐小程序/pages/check_bill/check_bill.vue?vue&type=template&id=80e78ef4& ***!
+  \********************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -80,9 +80,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 47:
-/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/HBuilderProjects/疫情期间校园订餐小程序/pages/check_bill/check_bill.vue?vue&type=template&id=80e78ef4& ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/HBuilderProjects/Yalidas的订餐小程序/pages/check_bill/check_bill.vue?vue&type=template&id=80e78ef4& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -136,9 +136,9 @@ render._withStripped = true
 /***/ }),
 
 /***/ 48:
-/*!************************************************************************************************!*\
-  !*** D:/HBuilderProjects/疫情期间校园订餐小程序/pages/check_bill/check_bill.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************************/
+/*!**************************************************************************************************!*\
+  !*** D:/HBuilderProjects/Yalidas的订餐小程序/pages/check_bill/check_bill.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -152,14 +152,15 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 49:
-/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/HBuilderProjects/疫情期间校园订餐小程序/pages/check_bill/check_bill.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/HBuilderProjects/Yalidas的订餐小程序/pages/check_bill/check_bill.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+//
 //
 //
 //
@@ -218,10 +219,12 @@ var _default =
         // 查收昨日订单
         var time = _this.getTime();
         _this.send_time = time;
+        console.log(_this.send_time);
       } else {
         // 统计今日订餐信息
         var time = _this.sendTime();
         _this.send_time = time;
+        console.log(_this.send_time);
       }
       _this.getbill(time, value[0]);
     });
@@ -256,7 +259,7 @@ var _default =
             that.dinner_sum = 0;
             for (var i = 0; i < that.bill.length; i++) {
               var item = that.bill[i];
-              // console.log(parseInt(item.bill_breakfast_num))
+              console.log(parseInt(item.bill_breakfast_num));
               var detail = {
                 class: item.bill_class,
                 room: item.bill_room,
@@ -290,13 +293,13 @@ var _default =
       var date = new Date(),
       year = date.getFullYear(),
       month = date.getMonth() + 1,
-      day = date.getDate(),
+      day = date.getDate() - 1,
       hour = date.getHours() < 10 ? "0" + date.getHours() : date.getHours(),
       minute = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes(),
       second = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
       month >= 1 && month <= 9 ? month = "0" + month : "";
       day >= 0 && day <= 9 ? day = "0" + day : "";
-      var timer = year + '-' + month + '-' + (day - 1);
+      var timer = year + '-' + month + '-' + day;
       return timer;
     },
     //今日订单统计
@@ -318,9 +321,9 @@ var _default =
 /***/ }),
 
 /***/ 50:
-/*!********************************************************************************************************!*\
-  !*** D:/HBuilderProjects/疫情期间校园订餐小程序/pages/check_bill/check_bill.vue?vue&type=style&index=0&lang=css& ***!
-  \********************************************************************************************************/
+/*!**********************************************************************************************************!*\
+  !*** D:/HBuilderProjects/Yalidas的订餐小程序/pages/check_bill/check_bill.vue?vue&type=style&index=0&lang=css& ***!
+  \**********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -334,9 +337,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 51:
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/HBuilderProjects/疫情期间校园订餐小程序/pages/check_bill/check_bill.vue?vue&type=style&index=0&lang=css& ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/HBuilderProjects/Yalidas的订餐小程序/pages/check_bill/check_bill.vue?vue&type=style&index=0&lang=css& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

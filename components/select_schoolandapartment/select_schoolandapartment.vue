@@ -12,7 +12,7 @@
 			</view>
 			<picker-view class="picker-view" @change="bindchange">
 				<picker-view-column>
-					<view class="item" v-for="(item,index) in schools" :key="index">{{index}} 学院</view>
+					<view class="item" v-for="(item,index) in schools" :key="index">{{index}}</view>
 				</picker-view-column>
 				<picker-view-column>
 					<view class="item" v-for="(item,index) in schools[schoolList[school]]" :key="index">{{item}}</view>

@@ -98,7 +98,7 @@
 			})
 		},
 		// check用于判断是否已确认，bill_id用来后续的修改订确认状态
-		props:['bill_class','bill_price','bill_num','bill_time','bill_check','bill_id','check_time','special_num'],
+		props:['bill_class','bill_price','bill_num','bill_time','bill_check','bill_id','check_time','special_num','bill_apartment'],
 		methods:{
 			// 备注信息
 			note:function(e){
@@ -113,6 +113,7 @@
 			// 点击展示详情信息
 			show_detail:function(e){
 				this.show_room = !this.show_room
+				console.log(this.bill_apartment)
 				// 查询该班级当天所有订单信息
 				var that = this
 				uni.request({
@@ -120,7 +121,8 @@
 					data: {
 						// 查询条件（不直接查询所有，而是输入条件在数据库中查询，因为数据量一大用数据库的搜索算法更快，不然还得自己写算法）
 						time: this.bill_time,
-						class: this.bill_class
+						class: this.bill_class,
+						apartment: this.bill_apartment
 					},
 					method: "POST",
 					dataType: 'json',

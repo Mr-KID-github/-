@@ -1,11 +1,11 @@
 <template>
 	<view style="background-color: white; height: 220rpx;">
 		<view class="plan_time">
-			<text class="plan_title">选择公寓 & 输入寝室号</text>
+			<text class="plan_title">选择楼层 & 输入寝室号</text>
 			<view class="time_content">
 				<!-- 点击展示自定义弹窗 -->
 				<view class="time_item" @click="show_Model">
-					<text v-if="!custom_settings.apartment">请选择公寓</text>
+					<text v-if="!custom_settings.apartment">请选择楼层</text>
 					<text v-if="custom_settings.apartment">{{custom_settings.apartment}}</text>
 					<image :src="imgs.arrow" style="width: 25rpx; height: 25rpx;"></image>
 				</view>

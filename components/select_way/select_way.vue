@@ -2,7 +2,7 @@
 	<view style="background-color: white;">
 		<view class="plan_time">
 			<view class="select_way" style="display: flex;">
-				<text class="plan_title">选择学院 & 选择公寓</text>
+				<text class="plan_title">选择学校 & 选择公寓</text>
 				<view class="plan_title2" v-if="!display">统计明日订餐</view>
 				<view class="plan_title2" v-if="display">查收今日订单</view>
 				<switch style="transform:scale(0.5)" @change="switch_change"></switch>
@@ -10,7 +10,7 @@
 			<view class="time_content">
 				<!-- 点击展示自定义弹窗 -->
 				<view class="time_item" @click="show_Model">
-					<text v-if="!custom_settings.settings_school">请选择学院</text>
+					<text v-if="!custom_settings.settings_school">请选择学校</text>
 					<text v-if="custom_settings.settings_school">{{custom_settings.settings_school}}</text>
 					<image :src="imgs.arrow" style="width: 25rpx; height: 25rpx;"></image>
 				</view>
