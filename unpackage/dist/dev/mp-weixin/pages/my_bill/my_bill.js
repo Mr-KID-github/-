@@ -189,18 +189,39 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 var _default =
 {
   data: function data() {
     return {
       // apartment: '',
       // room: '',
-      bill: [] };
+      bill: [],
 
 
+      end_time: '',
+      start_time: '' };
 
   },
   onLoad: function onLoad() {
+    var that = this;
+    uni.request({
+      url: getApp().globalData.server + '/index.php/Home/Index/find_open_time',
+      data: {},
+
+
+      method: "POST",
+      dataType: 'json',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
+      success: function success(res) {
+        console.log(res.data.open_time[0]);
+        that.end_time = res.data.open_time[0].end_time;
+        that.start_time = res.data.open_time[0].start_time;
+      } });
+
     // this.apartment = getApp().globalData.apartment
     // this.room = getApp().globalData.room
     // this.get_roomAllbill()

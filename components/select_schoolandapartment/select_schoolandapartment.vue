@@ -60,7 +60,7 @@
 			cancer(){
 				this.showmask = false
 				uni.$emit('unshow',this.showmask)
-				uni.$emit('custom_value',['请选择学院','请选择班级'])
+				uni.$emit('custom_value',['请选择学校','请选择公寓'])
 			},
 			confirm(){
 				// setTimeout( () => {

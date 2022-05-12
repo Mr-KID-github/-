@@ -171,7 +171,7 @@ var _default =
     cancer: function cancer() {
       this.showmask = false;
       uni.$emit('unshow', this.showmask);
-      uni.$emit('apartment_value', ['请选择公寓']);
+      uni.$emit('apartment_value', ['请选择楼层']);
     },
     confirm: function confirm() {
       // setTimeout( () => {

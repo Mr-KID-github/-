@@ -11,7 +11,7 @@
 			<view style="display: flex; justify-content: space-between; width: 680rpx;">
 				<text class="text_item" style="font-size: 28rpx; left: 20rpx;">我的订单</text>
 				<view style="display: flex; align-items: center;">
-					<text class="text_item" style="font-size: 32rpx; right: 20rpx;">总计：{{bill.length}}份</text>
+					<text class="text_item" style="font-size: 32rpx; right: 20rpx;">总计：{{bill.length}}单</text>
 				</view>		
 			</view>
 		</view>
@@ -29,6 +29,8 @@
 						:breakfast_special="item.breakfast_special"
 						:lunch_special="item.lunch_special"
 						:dinner_special="item.dinner_special"
+						:end_time='end_time'
+						:start_time='start_time'
 			></food_item>
 		</view>
 	</view>
@@ -42,10 +44,29 @@
 				// room: '',
 				bill: [
 					
-				]
+				],
+				end_time: '',
+				start_time: ''
 			}
 		},
 		onLoad(){
+			var that = this
+			uni.request({
+				url: getApp().globalData.server + '/index.php/Home/Index/find_open_time',
+				data: {
+				
+				},
+				method: "POST",
+				dataType: 'json',
+				header: {
+					'content-type': 'application/x-www-form-urlencoded' // 默认值
+				},
+				success(res) {
+					console.log(res.data.open_time[0])
+					that.end_time = res.data.open_time[0].end_time
+					that.start_time = res.data.open_time[0].start_time
+				}
+			})
 			// this.apartment = getApp().globalData.apartment
 			// this.room = getApp().globalData.room
 			// this.get_roomAllbill()

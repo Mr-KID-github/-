@@ -88,10 +88,13 @@
 				}
 			};
 		},
+		// check用于判断是否已确认，bill_id用来后续的修改订确认状态
+		props:['start_time','end_time','breakfast_special','lunch_special','dinner_special','bill_class','bill_room','breakfast_order','lunch_order','dinner_order','bill_price','bill_breakfast_num','bill_lunch_num','bill_dinner_num','bill_apartment','bill_time','bill_check','bill_id','check_time','special_num'],
+		
 		created() {
 			
 			// 调用find_note接口
-			if (this.bill_time == this.getTime() && this.gethour()<13 && this.gethour()>8){
+			if (this.bill_time == this.getTime() && this.gethour()< this.end_time && this.gethour()>(this.start_time-1)){
 				this.canedit = 1
 			} else {
 				this.canedit = 0
@@ -117,8 +120,6 @@
 				}
 			})
 		},
-		// check用于判断是否已确认，bill_id用来后续的修改订确认状态
-		props:['breakfast_special','lunch_special','dinner_special','bill_class','bill_room','breakfast_order','lunch_order','dinner_order','bill_price','bill_breakfast_num','bill_lunch_num','bill_dinner_num','bill_apartment','bill_time','bill_check','bill_id','check_time','special_num'],
 		methods:{
 			//获取时间函数
 			gethour: function() {

@@ -291,15 +291,15 @@ var _default =
     },
     // 确认方案
     check_out: function check_out() {
-      if (this.bill.school == '' || this.bill.school == '请选择学院') {
+      if (this.bill.school == '' || this.bill.school == '请选择学校') {
         uni.showModal({
           showCancel: false,
-          content: "请选择学院班级" });
+          content: "请选择学校&公寓" });
 
-      } else if (this.bill.apartment == '') {
+      } else if (this.bill.apartment == '' || this.bill.apartment == '请选择楼层') {
         uni.showModal({
           showCancel: false,
-          content: "请选择公寓" });
+          content: "请选择楼层" });
 
       } else if (this.bill.room == '') {
         uni.showModal({
@@ -313,7 +313,7 @@ var _default =
           url: getApp().globalData.server + '/index.php/Home/Index/find_roombill',
           data: {
             school: this.bill.school,
-            apartment: this.bill.apartment,
+            apartment: this.bill.class,
             room: this.bill.room,
             time: this.getTime() //获得当前时间
           },
@@ -323,6 +323,11 @@ var _default =
             'content-type': 'application/x-www-form-urlencoded' // 默认值
           },
           success: function success(res) {
+            // console.log(res)
+            // console.log(that.bill.school)
+            // console.log(that.bill.apartment)
+            // console.log(that.bill.room)
+            // console.log(that.getTime())
             // 数据库中存在此寝室订单
             if (res.data.error_code == 0) {
               uni.showModal({

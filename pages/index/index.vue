@@ -170,12 +170,12 @@
 					})
 				} else {
 					var hour = this.getTime()
-					if (hour <= this.start_time - 1) {
+					if (hour <= (this.start_time - 1)) {
 						uni.showModal({
 							showCancel:false,
 							content: "订餐时间未开始"
 						})
-					} else if (hour > this.end_time-1) {
+					} else if (hour > (this.end_time-1)) {
 						uni.showModal({
 							showCancel:false,
 							content: "订餐时间已结束"
